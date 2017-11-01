@@ -1,0 +1,13 @@
+{% load static %}                                                               
+
+<link rel="stylesheet" type="text/css" href="{% static 'content_list/style.css' %}" />
+
+{% if article_list %}
+    <ul>
+    {% for article in article_list %}
+    <li><p>{{ article.title_text }}</p></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No article is available.</p>
+{% endif %}
