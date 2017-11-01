@@ -1,0 +1,802 @@
+<!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #75715e"># Author : Steven Wang  Date: 20160816</span>
+
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">re</span>
+
+<span style="color: #75715e">#####################################################</span>
+<span style="color: #75715e"># r&quot;string&quot; : raw, &quot;\&quot; means just a backslash, no &quot;escape&quot;</span>
+<span style="color: #75715e">#####################################################</span>
+
+<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">search(</span><span style="color: #e6db74">&quot;ape&quot;</span><span style="color: #f8f8f2">,</span><span style="color: #e6db74">&quot;The ape was at the apex&quot;</span><span style="color: #f8f8f2">):</span>
+    <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;There is an ape&quot;</span><span style="color: #f8f8f2">)</span>
+
+<span style="color: #f8f8f2">allApes</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">findall(</span><span style="color: #e6db74">&quot;ape.&quot;</span><span style="color: #f8f8f2">,</span><span style="color: #e6db74">&quot;The ape was at the apex&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #75715e"># &#39;.&#39; will replace any single chararter or single space</span>
+<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">allApes:</span>
+    <span style="color: #f8f8f2">print(i)</span>
+
+<span style="color: #f8f8f2">theStr</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;The ape was at the apex&quot;</span>
+
+<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">finditer(</span><span style="color: #e6db74">&quot;ape.&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">theStr):</span>
+    <span style="color: #f8f8f2">locTuple</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">span()</span>
+<span style="color: #75715e"># return a Tuple that contain its location in the string</span>
+    <span style="color: #f8f8f2">print(locTuple)</span>
+<span style="color: #75715e"># &gt;&gt;&gt; (4, 8)</span>
+<span style="color: #75715e"># &gt;&gt;&gt; (19, 23)</span>
+    <span style="color: #f8f8f2">print(theStr[locTuple[</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">]:locTuple[</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">]])</span>
+<span style="color: #75715e"># &gt;&gt;&gt; ape </span>
+<span style="color: #75715e"># &gt;&gt;&gt; apex</span>
+
+<span style="color: #f8f8f2">animalStr</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;Cat rat mat pat&quot;</span>
+<span style="color: #f8f8f2">allAnimals</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">findall(</span><span style="color: #e6db74">&quot;[crmfp]at&quot;</span><span style="color: #f8f8f2">,animalStr)</span>
+<span style="color: #75715e"># match certain character</span>
+<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">allAnimals:</span>
+    <span style="color: #f8f8f2">print(i)</span>
+
+<span style="color: #75715e"># &gt;&gt;&gt;rat</span>
+<span style="color: #75715e"># &gt;&gt;&gt;mat</span>
+<span style="color: #75715e"># &gt;&gt;&gt;pat</span>
+
+<span style="color: #f8f8f2">someAnimals</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">findall(</span><span style="color: #e6db74">&quot;[c-mC-M]at&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">animalStr)</span>
+<span style="color: #75715e"># match a series of range</span>
+<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">someAnimals:</span>
+    <span style="color: #f8f8f2">print(i)</span>
+<span style="color: #75715e"># &gt;&gt;&gt;Cat</span>
+<span style="color: #75715e"># &gt;&gt;&gt;mat</span>
+
+<span style="color: #f8f8f2">someAnimals</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">findall(</span><span style="color: #e6db74">&quot;[^Cr]at&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">animalStr)</span>
+<span style="color: #75715e"># match any character BUT &#39;C&#39; and &#39;r&#39;</span>
+<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">someAnimals:</span>
+    <span style="color: #f8f8f2">print(i)</span>
+<span style="color: #75715e"># &gt;&gt;&gt;mat</span>
+<span style="color: #75715e"># &gt;&gt;&gt;pat</span>
+
+<span style="color: #75715e"># Replace strings</span>
+<span style="color: #f8f8f2">owlFood</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;rat cat mat pat&quot;</span>
+<span style="color: #f8f8f2">regex</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">compile(</span><span style="color: #e6db74">&quot;[cr]at&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #75715e"># create a object that contains a certain pattern</span>
+<span style="color: #f8f8f2">owlFood</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">regex</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">sub(</span><span style="color: #e6db74">&quot;owl&quot;</span><span style="color: #f8f8f2">,owlFood)</span>
+<span style="color: #f8f8f2">print(owlFood)</span>
+<span style="color: #75715e"># &gt;&gt;&gt;owl owl mat pat</span>
+
+<span style="color: #75715e"># Backslash problem</span>
+<span style="color: #f8f8f2">randStr</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;Here is </span><span style="color: #ae81ff">\\</span><span style="color: #e6db74">stuff&quot;</span>
+<span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;Find </span><span style="color: #ae81ff">\\</span><span style="color: #e6db74">stuff :&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">search(</span><span style="color: #e6db74">&quot;</span><span style="color: #ae81ff">\\</span><span style="color: #e6db74">stuff&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">randStr))</span>
+<span style="color: #75715e"># &gt;&gt;&gt;Find \stuff : None</span>
+<span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;Find </span><span style="color: #ae81ff">\\</span><span style="color: #e6db74">stuff :&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">search(</span><span style="color: #e6db74">&quot;</span><span style="color: #ae81ff">\\\\</span><span style="color: #e6db74">stuff&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">randStr))</span>
+<span style="color: #75715e"># &gt;&gt;&gt;Find \stuff : &lt;_sre.SRE_Match object; span=(8, 14), match=&#39;\\stuff&#39;&gt;</span>
+<span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;Find </span><span style="color: #ae81ff">\\</span><span style="color: #e6db74">stuff :&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">search(</span><span style="color: #e6db74">r&quot;</span><span style="color: #ae81ff">\\</span><span style="color: #e6db74">stuff&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">randStr))</span>
+<span style="color: #75715e"># &quot;rawstrings&quot;, this would not treat &#39;\&#39; as special character</span>
+
+<span style="color: #75715e"># Dot problem</span>
+<span style="color: #f8f8f2">randStr</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;F.B.I. I.R.S. CIA&quot;</span>
+<span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;Matches:&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">len(re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">findall(</span><span style="color: #e6db74">&quot;.\..\..\.&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">randStr)))</span>
+<span style="color: #75715e"># &gt;&gt;&gt;Matches: 2</span>
+
+<span style="color: #75715e"># Whitespace problem</span>
+<span style="color: #f8f8f2">randStr</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&#39;&#39;&#39;This is a long</span>
+<span style="color: #e6db74">string that goes</span>
+<span style="color: #e6db74">on for many lines</span>
+<span style="color: #e6db74">&#39;&#39;&#39;</span>
+<span style="color: #f8f8f2">print(randStr)</span>
+<span style="color: #f8f8f2">regex</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">compile(</span><span style="color: #e6db74">&quot;</span><span style="color: #ae81ff">\n</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">randStr</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">regex</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">sub(</span><span style="color: #e6db74">&quot; &quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">randStr)</span>
+<span style="color: #f8f8f2">print(randStr)</span>
+
+<span style="color: #75715e"># &gt;&gt;&gt;This is a long string that goes on for many lines</span>
+
+<span style="color: #75715e"># \b : Backspace</span>
+<span style="color: #75715e"># \f : Form Feed</span>
+<span style="color: #75715e"># \r : Carriage Return</span>
+<span style="color: #75715e"># \t : Tab</span>
+<span style="color: #75715e"># \v : Vertical Tab</span>
+
+<span style="color: #75715e"># \r\n : This would show up a lot in windows and html</span>
+
+<span style="color: #75715e"># Matching numbers</span>
+<span style="color: #75715e"># \d : [0-9]    These 2 are the same, will match any number</span>
+<span style="color: #75715e"># \D : [^0-9]   These 2 are the same, will match any character but a number</span>
+
+<span style="color: #f8f8f2">randStr</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;12345&quot;</span>
+<span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;Matches :&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">len(re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">findall(</span><span style="color: #e6db74">&quot;\d&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">randStr)))</span>
+<span style="color: #75715e"># &gt;&gt;&gt;Matches : 5</span>
+<span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;Matches :&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">len(re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">findall(</span><span style="color: #e6db74">&quot;\d{5}&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">randStr)))</span>
+<span style="color: #75715e"># match a 5 digit number</span>
+<span style="color: #75715e"># &gt;&gt;&gt;Matches : 1</span>
+<span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;Matches :&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">len(re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">findall(</span><span style="color: #e6db74">&quot;\d{2}&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">randStr)))</span>
+<span style="color: #75715e"># &gt;&gt;&gt;Matches : 2</span>
+<span style="color: #75715e"># 1st : 12 ; 2nd : 34</span>
+
+<span style="color: #75715e"># Matching within a range between 5 and 7 digits</span>
+<span style="color: #f8f8f2">numStr</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;123 12345 123456 1234567&quot;</span>
+<span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;Matches :&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">len(re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">findall(</span><span style="color: #e6db74">&quot;\d{5,7}&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">numStr)))</span>
+<span style="color: #75715e"># either 5, 6 or 7 digits</span>
+<span style="color: #75715e"># &gt;&gt;&gt;Matches : 3</span>
+
+<span style="color: #75715e"># Matching any single letter or  mber</span>
+<span style="color: #75715e"># \w : [a-zA-Z0-9_]</span>
+<span style="color: #75715e"># \W : [^a-zA-Z0-9_]</span>
+
+<span style="color: #f8f8f2">phNum</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;857-555-3158&quot;</span>
+<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">search(</span><span style="color: #e6db74">&quot;\w{3}-\w{3}-\w{4}&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">phNum):</span>
+    <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;It is a phone number&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #75715e"># &gt;&gt;&gt;It is a phone number</span>
+
+<span style="color: #75715e"># space</span>
+<span style="color: #75715e"># \s : [\f\n\r\t\v]</span>
+<span style="color: #75715e"># will match all kinds of space</span>
+<span style="color: #75715e"># \S : [^\f\n\r\t\v]</span>
+
+<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">search(</span><span style="color: #e6db74">&quot;\w{2,20}\s\w{2,20}&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;Steven Wang&quot;</span><span style="color: #f8f8f2">):</span>
+    <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;It is valid&quot;</span><span style="color: #f8f8f2">)</span>
+
+<span style="color: #75715e"># + : will match one or more characters</span>
+<span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;Matches :&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">len(re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">findall(</span><span style="color: #e6db74">&quot;a+&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;a as ape bug&quot;</span><span style="color: #f8f8f2">)))</span>
+<span style="color: #75715e"># &gt;&gt;&gt;Matches : 3</span>
+
+<span style="color: #75715e"># Matching an email addresss</span>
+<span style="color: #f8f8f2">email_list</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;ap@apple.com, mail@gmail.com, w@b.com ce@.com&quot;</span>
+<span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;Email Matches :&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">len(re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">findall(</span><span style="color: #e6db74">&quot;[\w._%+-]{2,20}@[\w.-]{2,20}\.[A-Za-z]{2,3}&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">email_list)))</span>
+<span style="color: #75715e"># no need for &#39;\&#39; when in &quot;[]&quot;</span>
+
+<span style="color: #75715e"># summary</span>
+<span style="color: #75715e"># Did you find a match</span>
+<span style="color: #75715e"># if re.search(&quot;REGEX&quot;, yourString)</span>
+ 
+<span style="color: #75715e"># Get list of matches</span>
+<span style="color: #75715e"># print(&quot;Matches :&quot;, len(re.findall(&quot;REGEX&quot;, yourString)))</span>
+ 
+<span style="color: #75715e"># Get a pattern object</span>
+<span style="color: #75715e"># regex = re.compile(&quot;REGEX&quot;)</span>
+ 
+<span style="color: #75715e"># Substitute the match</span>
+<span style="color: #75715e"># yourString = regex.sub(&quot;substitution&quot;, yourString)</span>
+ 
+<span style="color: #75715e"># [ ]   : Match what is in the brackets</span>
+<span style="color: #75715e"># [^ ]  : Match anything not in the brackets</span>
+<span style="color: #75715e"># .     : Match any 1 character or space</span>
+<span style="color: #75715e"># +     : Match 1 or more of what proceeds</span>
+<span style="color: #75715e"># \n    : Newline</span>
+<span style="color: #75715e"># \d    : Any 1 number</span>
+<span style="color: #75715e"># \D    : Anything but a number</span>
+<span style="color: #75715e"># \w    : Same as [a-zA-Z0-9_]</span>
+<span style="color: #75715e"># \W    : Same as [^a-zA-Z0-9_]</span>
+<span style="color: #75715e"># \s    : Same as [\f\n\r\t\v]</span>
+<span style="color: #75715e"># \S    : Same as [^\f\n\r\t\v]</span>
+<span style="color: #75715e"># {5}   : Match 5 of what proceeds the curly brackets</span>
+<span style="color: #75715e"># {5,7} : Match values that are between 5 and 7 in length</span>
+
+<span style="color: #f8f8f2">randStr</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;cat cats&quot;</span>
+<span style="color: #f8f8f2">regex</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">compile(</span><span style="color: #e6db74">&quot;[cat]+s?&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #75715e"># &quot;+&quot; will match one or more trailing characters</span>
+<span style="color: #f8f8f2">matches</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">findall(regex,</span> <span style="color: #f8f8f2">randStr)</span>
+<span style="color: #75715e"># The question mark is called a quantifier</span>
+<span style="color: #75715e"># colou?r matches both colour and color</span>
+<span style="color: #75715e"># Nov(ember)? matches Nov and November</span>
+<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">matches:</span>
+    <span style="color: #f8f8f2">print(i)</span>
+
+<span style="color: #f8f8f2">randStr</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;cat cats cat&#39;s&quot;</span>
+<span style="color: #f8f8f2">regex</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">compile(</span><span style="color: #e6db74">&quot;[cat]+[&#39;s]*&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #75715e"># will match all three</span>
+
+<span style="color: #75715e"># eg.</span>
+<span style="color: #f8f8f2">regex</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">compile(</span><span style="color: #e6db74">&quot;[\w\s]+[</span><span style="color: #ae81ff">\r</span><span style="color: #e6db74">]?</span><span style="color: #ae81ff">\n</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #75715e"># \s space</span>
+<span style="color: #75715e"># find a line</span>
+
+<span style="color: #75715e"># greedy and lazy matching</span>
+<span style="color: #f8f8f2">randStr</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;&lt;name&gt;Steven&lt;/name&gt;&lt;name&gt;Wang&lt;/name&gt;&quot;</span>
+<span style="color: #75715e"># we want to get things between the tags</span>
+<span style="color: #960050; background-color: #1e0010">`</span><span style="color: #f8f8f2">regex</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">compile(</span><span style="color: #e6db74">&quot;&lt;name&gt;.*&lt;/name&gt;&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #75715e"># However, &quot;*&quot; is what we called &quot;greedy&quot; and it search for the largest scope; It grab the biggest match possible</span>
+
+<span style="color: #960050; background-color: #1e0010">`</span><span style="color: #f8f8f2">regex</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">compile(</span><span style="color: #e6db74">&quot;&lt;name&gt;.*?&lt;/name&gt;&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #75715e"># add &quot;?&quot; to make it lazy</span>
+<span style="color: #75715e"># +?</span>
+<span style="color: #75715e"># {5}?</span>
+
+<span style="color: #75715e"># greedy : grab the biggest match possible</span>
+<span style="color: #75715e"># lazy : grab the smallest match possible</span>
+
+<span style="color: #75715e"># Word boundaries</span>
+<span style="color: #75715e"># \b</span>
+<span style="color: #f8f8f2">randStr</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;ape at the apex&quot;</span>
+<span style="color: #75715e"># we want only the first match</span>
+<span style="color: #f8f8f2">regex</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">compile(</span><span style="color: #e6db74">r&quot;\bape\b&quot;</span><span style="color: #f8f8f2">)</span>
+
+<span style="color: #75715e"># String boundaries</span>
+<span style="color: #75715e"># ^ : Beginning of the string</span>
+<span style="color: #75715e"># $ : End of the string</span>
+<span style="color: #f8f8f2">randStr</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;Match everying up to @&quot;</span>
+<span style="color: #f8f8f2">regex</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">compile(</span><span style="color: #e6db74">r&quot;^.*[^@]&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">matches</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">findall(regex,</span> <span style="color: #f8f8f2">randStr)</span>
+
+<span style="color: #f8f8f2">randStr</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;@ Get this string&quot;</span>
+<span style="color: #f8f8f2">regex</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">compile(e</span><span style="color: #e6db74">&quot;[^\s].*$&quot;</span><span style="color: #f8f8f2">)</span>
+
+<span style="color: #f8f8f2">randStr</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&#39;&#39;&#39;Ape is big</span>
+<span style="color: #e6db74">Turtle is slow</span>
+<span style="color: #e6db74">Steven is good</span>
+<span style="color: #e6db74">&#39;&#39;&#39;</span>
+<span style="color: #75715e"># multiline string</span>
+
+<span style="color: #f8f8f2">regex</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">compile(</span><span style="color: #e6db74">r&quot;(?m)^.*?\s&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #75715e"># (?m) target each line in the multiline strings</span>
+
+<span style="color: #75715e"># Substrings</span>
+<span style="color: #f8f8f2">randStr</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;My anumer is 888-000-1111&quot;</span>
+<span style="color: #f8f8f2">regex</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">compile((</span><span style="color: #e6db74">r&quot;888-(.*)&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #75715e"># only get 000-1111</span>
+
+<span style="color: #f8f8f2">regex</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">compile(</span><span style="color: #e6db74">r&quot;888-(.*)-(.*)&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #75715e"># 555 1111</span>
+
+<span style="color: #75715e"># Summary</span>
+<span style="color: #75715e"># Did you find a match</span>
+<span style="color: #75715e"># if re.search(&quot;REGEX&quot;, yourString)</span>
+ 
+<span style="color: #75715e"># Get list of matches</span>
+<span style="color: #75715e"># print(&quot;Matches :&quot;, len(re.findall(&quot;REGEX&quot;, yourString)))</span>
+ 
+<span style="color: #75715e"># Get a pattern object</span>
+<span style="color: #75715e"># regex = re.compile(&quot;REGEX&quot;)</span>
+ 
+<span style="color: #75715e"># Substitute the match</span>
+<span style="color: #75715e"># yourString = regex.sub(&quot;substitution&quot;, yourString)</span>
+ 
+<span style="color: #75715e"># [ ]   : Match what is in the brackets</span>
+<span style="color: #75715e"># [^ ]  : Match anything not in the brackets</span>
+<span style="color: #75715e"># ( )   : Return surrounded submatch</span>
+<span style="color: #75715e"># .     : Match any 1 character or space</span>
+<span style="color: #75715e"># +     : Match 1 or more of what proceeds</span>
+<span style="color: #75715e"># ?     : Match 0 or 1</span>
+<span style="color: #75715e"># *     : Match 0 or More</span>
+<span style="color: #75715e"># *?    : Lazy match the smallest match</span>
+<span style="color: #75715e"># \b    : Word boundary</span>
+<span style="color: #75715e"># ^     : Beginning of String</span>
+<span style="color: #75715e"># $     : End of String</span>
+<span style="color: #75715e"># \n    : Newline</span>
+<span style="color: #75715e"># \d    : Any 1 number</span>
+<span style="color: #75715e"># \D    : Anything but a number</span>
+<span style="color: #75715e"># \w    : Same as [a-zA-Z0-9_]</span>
+<span style="color: #75715e"># \W    : Same as [^a-zA-Z0-9_]</span>
+<span style="color: #75715e"># \s    : Same as [\f\n\r\t\v]</span>
+<span style="color: #75715e"># \S    : Same as [^\f\n\r\t\v]</span>
+<span style="color: #75715e"># {5}   : Match 5 of what proceeds the curly brackets</span>
+<span style="color: #75715e"># {5,7} : Match values that are between 5 and 7 in length</span>
+<span style="color: #75715e"># ($m)  : Allow ^ on multiline string</span>
+ 
+<span style="color: #75715e"># ---------- Back References ----------</span>
+<span style="color: #75715e"># Capturing group</span>
+<span style="color: #75715e"># A back reference allows you to to reuse the expression</span>
+<span style="color: #75715e"># that proceeds it</span>
+
+<span style="color: #f8f8f2">randStr</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;&lt;a href=&#39;#&#39;&gt;&lt;b&gt;the ling&lt;/b&gt;&lt;/a&gt;&quot;</span>
+
+<span style="color: #75715e"># eg.</span>
+<span style="color: #f8f8f2">regex</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">compile(</span><span style="color: #e6db74">r&quot;&lt;b&gt;(.*?)&lt;/b&gt;&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">newStr</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">sub(regex,</span> <span style="color: #e6db74">r&quot;\1&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">randStr)</span>
+<span style="color: #75715e"># &quot;\1&quot; back reference</span>
+<span style="color: #f8f8f2">print(newStr)</span>
+
+<span style="color: #75715e"># eg 2.</span>
+<span style="color: #f8f8f2">randStr</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;123-456-7890&quot;</span>
+<span style="color: #f8f8f2">regex</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">compile(</span><span style="color: #e6db74">r&quot;([\d]{3})-([\d]{3}-[\d]{4})&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">newStr</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">sub(regex,</span> <span style="color: #e6db74">r&quot;(\1)\2&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">randStr)</span>
+<span style="color: #75715e"># \1 : ([\d]{3})</span>
+<span style="color: #75715e"># \2 : ([\d]{3}-[\d]{4})</span>
+<span style="color: #f8f8f2">print(randStr)</span>
+
+<span style="color: #75715e"># eg 3.</span>
+<span style="color: #f8f8f2">randStr</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;https://www.youtube.com http://www.google.com&quot;</span>
+<span style="color: #75715e"># goal</span>
+<span style="color: #75715e"># &lt;a href=&#39;https://www.youtube.com&#39;&gt;www.youtube.com&lt;/a&gt;</span>
+<span style="color: #75715e"># &lt;a href=&#39;http://www.google.com&#39;&gt;www.google.com&lt;/a&gt;</span>
+<span style="color: #f8f8f2">regex</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">compile(</span><span style="color: #e6db74">r&quot;(https?://[\w.]+&quot;</span><span style="color: #f8f8f2">))</span>
+<span style="color: #75715e"># ? : &quot;s&quot; may or may not be there</span>
+<span style="color: #f8f8f2">newStr</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">sub(regex,</span> <span style="color: #e6db74">r&quot;&lt;a href=&#39;\1&#39;&gt;\2&lt;/a&gt;&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">randStr)</span>
+
+<span style="color: #75715e"># Look ahead</span>
+<span style="color: #75715e"># (?=expression)</span>
+<span style="color: #f8f8f2">randStr</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;one two three four&quot;</span>
+<span style="color: #f8f8f2">regex</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">compile(</span><span style="color: #e6db74">r&quot;\w+(?=\b)&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #75715e"># (?=\b) go not return word boundaries</span>
+<span style="color: #75715e"># eg. (?=,); (?=.)</span>
+
+<span style="color: #75715e"># Look behind</span>
+<span style="color: #75715e"># (?&lt;=expression)</span>
+<span style="color: #f8f8f2">randStr</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;1. Bread 2. Apples 3. Lettuce&quot;</span>
+<span style="color: #f8f8f2">regex</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">compile(</span><span style="color: #e6db74">r&quot;(?&lt;=\d.\s)\w+&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #75715e"># (?&lt;=\d.\s) : look for it but do not want return it</span>
+
+<span style="color: #f8f8f2">randStr</span><span style="color: #e6db74">&quot;&lt;h1&gt;This is the title&lt;/h1&gt; &lt;h1&gt;Another title&lt;/h1&gt;&quot;</span>
+<span style="color: #f8f8f2">regex</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">compile(</span><span style="color: #e6db74">r&quot;(?&lt;=&lt;h1&gt;).+?(?=&lt;/h1&gt;)&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #75715e"># .+? : lazy</span>
+
+<span style="color: #75715e"># negative look head/behind</span>
+<span style="color: #75715e"># look for text that does not match the pattern</span>
+
+<span style="color: #75715e"># (?!expression) : Negative Look Ahead</span>
+<span style="color: #75715e"># (?&lt;!expression) : Negative Look Behind</span>
+
+<span style="color: #f8f8f2">randStr</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;8 Apples $3, 1 Bread $1, 1 Orange $2&quot;</span>
+<span style="color: #f8f8f2">regex</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">compile(</span><span style="color: #e6db74">r&quot;(?&lt;!\$)\d+&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">matches</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">findall(regex,</span> <span style="color: #f8f8f2">randStr)</span>
+<span style="color: #f8f8f2">print(len(matches))</span>
+
+<span style="color: #75715e"># named capturing group</span>
+<span style="color: #f8f8f2">(</span><span style="color: #960050; background-color: #1e0010">?</span><span style="color: #f8f8f2">P</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">question_id</span><span style="color: #f92672">&gt;</span><span style="color: #f8f8f2">[</span><span style="color: #ae81ff">0</span><span style="color: #f92672">-</span><span style="color: #ae81ff">9</span><span style="color: #f8f8f2">]</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">)</span>
+<span style="color: #75715e"># Using parentheses around a pattern “captures” the text matched by that pattern and sends it as an argument to the view function; ?P&lt;question_id&gt; defines the name that will be used to identify the matched pattern</span>
+
+<span style="color: #75715e">####################################################</span>
+<span style="color: #75715e"># summary</span>
+<span style="color: #75715e"># [ ]   : Match what is in the brackets</span>
+<span style="color: #75715e"># [^ ]  : Match anything not in the brackets</span>
+<span style="color: #75715e"># ( )   : Return surrounded submatch</span>
+<span style="color: #75715e"># .     : Match any 1 character or space</span>
+<span style="color: #75715e"># +     : Match 1 or more of what proceeds</span>
+<span style="color: #75715e"># ?     : Match 0 or 1</span>
+<span style="color: #75715e"># *     : Match 0 or More</span>
+<span style="color: #75715e"># *?    : Lazy match the smallest match</span>
+<span style="color: #75715e"># \b    : Word boundary</span>
+<span style="color: #75715e"># ^     : Beginning of String</span>
+<span style="color: #75715e"># $     : End of String</span>
+<span style="color: #75715e"># \n    : Newline</span>
+<span style="color: #75715e"># \d    : Any 1 number</span>
+<span style="color: #75715e"># \D    : Anything but a number</span>
+<span style="color: #75715e"># \w    : Same as [a-zA-Z0-9_]</span>
+<span style="color: #75715e"># \W    : Same as [^a-zA-Z0-9_]</span>
+<span style="color: #75715e"># \s    : Same as [\f\n\r\t\v]</span>
+<span style="color: #75715e"># \S    : Same as [^\f\n\r\t\v]</span>
+<span style="color: #75715e"># {5}   : Match 5 of what proceeds the curly brackets</span>
+<span style="color: #75715e"># {5,7} : Match values that are between 5 and 7 in length</span>
+<span style="color: #75715e"># ($m)  : Allow ^ on multiline string</span>
+ 
+<span style="color: #75715e"># Use a back reference to substitute what is between the</span>
+<span style="color: #75715e"># bold tags and eliminate the bold tags</span>
+<span style="color: #75715e"># re.sub(r&quot;&lt;b&gt;(.*?)&lt;/b&gt;&quot;, r&quot;\1&quot;, randStr)</span>
+ 
+<span style="color: #75715e"># Use a look ahead to find all characters of 1 or more</span>
+<span style="color: #75715e"># with a word boundary, but don&#39;t return the word</span>
+<span style="color: #75715e"># boundary</span>
+<span style="color: #75715e"># re.findall(r&quot;\w+(?=\b)&quot;, randStr)</span>
+ 
+<span style="color: #75715e"># Use a look behind to find words starting with a number,</span>
+<span style="color: #75715e"># period and space, but only return the word that follows</span>
+<span style="color: #75715e"># re.findall(r&quot;(?&lt;=\d.\s)\w+&quot;, randStr)</span>
+ 
+<span style="color: #75715e"># Use a negative look behind to only return numbers without</span>
+<span style="color: #75715e"># a $ in front of them</span>
+<span style="color: #75715e"># re.findall(r&quot;(?&lt;!\$)\d+&quot;, randStr)</span>
+
+<span style="color: #75715e">#######################################################</span>
+<span style="color: #75715e"># | : or</span>
+<span style="color: #f8f8f2">randStr</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;1. Dog 2. Cat 3. Turtle&quot;</span>
+<span style="color: #f8f8f2">regex</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">compile(</span><span style="color: #e6db74">r&quot;\d\.\s(Dog|Cat)&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">matches</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">findall(regex,</span> <span style="color: #f8f8f2">randStr)</span>
+<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">matches:</span>
+    <span style="color: #f8f8f2">print(i)</span>
+
+<span style="color: #75715e"># Group</span>
+
+<span style="color: #f8f8f2">birthday</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">input(</span><span style="color: #e6db74">&quot;Enter your birthday(mm-dd-yyyy):&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">bdRegex</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">search(</span><span style="color: #e6db74">r&quot;(\d{1,2})-(\d{1,2})-(\d{4})&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">birthday)</span>
+<span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;You were born on&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">bdRegex</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">group())</span>
+<span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;Month&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">bdRegex</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">group(</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">))</span>
+<span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;Day&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">bdRegex</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">group(</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">))</span>
+<span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;Year&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">bdRegex</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">group(</span><span style="color: #ae81ff">3</span><span style="color: #f8f8f2">))</span>
+
+<span style="color: #75715e"># match object</span>
+<span style="color: #f8f8f2">match</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">re</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">search(</span><span style="color: #e6db74">r&quot;\d{2}&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;The chicken is 13 months old.&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;Match : &quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">match</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">group())</span>
+<span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;Span : &quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">match</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">span())</span>
+<span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;Start : &quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">match</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">start())</span>
+<span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;End : &quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">match</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">end())</span>
+
+<span style="color: #75715e"># Name groups</span>
+<span style="color: #f8f8f2">randStr</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;December 21 1999&quot;</span>
+<span style="color: #f8f8f2">regex</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">r&quot;^(?P&lt;month&gt;\w+)\s(?P&lt;day&gt;\d+)\s(?P&lt;year&gt;\d+)&quot;</span>
+<span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;Span : &quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">match</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">group(</span><span style="color: #e6db74">&#39;month&#39;</span><span style="color: #f8f8f2">))</span>
+<span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;Start : &quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">match</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">group(</span><span style="color: #e6db74">&#39;day&#39;</span><span style="color: #f8f8f2">))</span>
+<span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;End : &quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">match</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">group(</span><span style="color: #e6db74">&#39;year&#39;</span><span style="color: #f8f8f2">))</span>
+</pre></td></tr></table></div>

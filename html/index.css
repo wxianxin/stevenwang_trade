@@ -1,0 +1,37 @@
+body {
+	margin: 0 auto;
+/*	width:960px;	
+*/
+	background-color: #000000;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+	height: 452px;
+	color: #ffffff;
+}
+
+.header h1 {
+	font-size: 60px;
+}
+
+.header h3 {
+	font-size: 24px;
+}
+
+.link ul {
+	display: inline;
+}
+
+.row_2 li {
+        display: inline;
+}
+
+.links h2 {
+	color: #ffffff;
+	padding-left: 30px;
+}
+
+.links h3 {
+	color: #00ff00
+}

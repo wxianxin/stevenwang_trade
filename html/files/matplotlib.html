@@ -1,0 +1,210 @@
+<!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #75715e"># Steven Wang</span>
+<span style="color: #75715e"># 2017</span>
+<span style="color: #75715e"># Anatomy of Matplotlib</span>
+
+<span style="color: #75715e"># For Jupyter/IPython notebooks, it&#39;s often easiest to use the Jupyter nbagg or notebook backend. This allows plots to be displayed and interacted with in the browser in a Jupyter notebook. Otherwise, figures will pop up in a separate GUI window.</span>
+<span style="color: #75715e"># You can achieve this in two ways:</span>
+<span style="color: #75715e"># 1. %matplotlib backend_name</span>
+<span style="color: #75715e"># 2. matplotlib.use(&quot;backend_name&quot;)</span>
+
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">matplotlib</span>
+<span style="color: #f8f8f2">matplotlib</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">use(</span><span style="color: #e6db74">&#39;nbagg&#39;</span><span style="color: #f8f8f2">)</span>
+
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">numpy</span> <span style="color: #66d9ef">as</span> <span style="color: #f8f8f2">np</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">matplotlib.pyplot</span> <span style="color: #66d9ef">as</span> <span style="color: #f8f8f2">plt</span>
+
+<span style="color: #75715e">################################################################################</span>
+<span style="color: #75715e"># Anatomy of a &quot;Plot&quot;</span>
+<span style="color: #75715e"># Figure:  The top-level container in this hierarchy. It is the overall window/page that everything is drawn on. You can have multiple independent figures and Figures can contain multiple Axes.</span>
+
+<span style="color: #75715e"># Axes: Most plotting ocurs on an Axes. The axes is effectively the area that we plot data on and any ticks/labels/etc associated with it. Usually we&#39;ll set up an Axes with a call to subplot (which places Axes on a regular grid), so in most cases, Axes and Subplot are synonymous.</span>
+<span style="color: #75715e"># Each Axes has an XAxis and a YAxis. It is worth mentioning here to explain where the term Axes comes from.</span>
+<span style="color: #75715e"># An Axes is made up of Axis objects and many other things.</span>
+<span style="color: #75715e"># An Axes object must belong to a Figure (and only one Figure).</span>
+
+<span style="color: #75715e"># Typically, you&#39;ll set up a Figure, and then add an Axes to it.</span>
+<span style="color: #75715e">################################################################################</span>
+
+<span style="color: #75715e">################################################################################</span>
+<span style="color: #75715e"># create a figure</span>
+<span style="color: #75715e"># fig = plt.figure()</span>
+<span style="color: #75715e"># plt.show()</span>
+
+<span style="color: #75715e">#  control the size of the figure through the figsize argument, which expects a tuple of (width, height) in inches.</span>
+<span style="color: #75715e"># Twice as tall as it is wide:</span>
+<span style="color: #f8f8f2">fig</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">plt</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">figure(figsize</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">plt</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">figaspect(</span><span style="color: #ae81ff">2.0</span><span style="color: #f8f8f2">))</span>
+<span style="color: #f8f8f2">plt</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">show()</span>
+
+<span style="color: #75715e">################################################################################</span>
+
+<span style="color: #75715e">################################################################################</span>
+<span style="color: #75715e"># Axes</span>
+<span style="color: #f8f8f2">fig</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">plt</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">figure()</span>
+<span style="color: #f8f8f2">ax</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">fig</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">add_subplot(</span><span style="color: #ae81ff">111</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e"># Basically, 1 row and 1 column.</span>
+<span style="color: #f8f8f2">ax</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">set(xlim</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">[</span><span style="color: #ae81ff">0.5</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">4.5</span><span style="color: #f8f8f2">],</span> <span style="color: #f8f8f2">ylim</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">[</span><span style="color: #f92672">-</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">8</span><span style="color: #f8f8f2">],</span> <span style="color: #f8f8f2">title</span><span style="color: #f92672">=</span><span style="color: #e6db74">&#39;An Example Axes&#39;</span><span style="color: #f8f8f2">,</span>
+               <span style="color: #f8f8f2">ylabel</span><span style="color: #f92672">=</span><span style="color: #e6db74">&#39;Y-Axis&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">xlabel</span><span style="color: #f92672">=</span><span style="color: #e6db74">&#39;X-Axis&#39;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">plt</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">show()</span>
+
+<span style="color: #75715e"># Note that the set method doesn&#39;t just apply to Axes; it applies to more-or-less all matplotlib objects.</span>
+<span style="color: #75715e"># ax.set_*</span>
+<span style="color: #75715e"># ax.set_xlim([0.5, 4.5])</span>
+<span style="color: #75715e"># ax.set_ylim([-2, 8])</span>
+<span style="color: #75715e"># ax.set_title(&#39;An Example Axes&#39;)</span>
+<span style="color: #75715e"># ax.set_ylabel(&#39;Y-Axis&#39;)</span>
+<span style="color: #75715e"># ax.set_xlabel(&#39;X-Axis&#39;)</span>
+<span style="color: #75715e">################################################################################</span>
+
+<span style="color: #75715e">################################################################################</span>
+<span style="color: #75715e"># plot &amp; scatter</span>
+<span style="color: #f8f8f2">fig</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">plt</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">figure()</span>
+<span style="color: #f8f8f2">ax</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">fig</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">add_subplot(</span><span style="color: #ae81ff">111</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">ax</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">plot([</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">3</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">4</span><span style="color: #f8f8f2">],</span> <span style="color: #f8f8f2">[</span><span style="color: #ae81ff">10</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">20</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">25</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">30</span><span style="color: #f8f8f2">],</span> <span style="color: #f8f8f2">color</span><span style="color: #f92672">=</span><span style="color: #e6db74">&#39;lightblue&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">linewidth</span><span style="color: #f92672">=</span><span style="color: #ae81ff">3</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">ax</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">scatter([</span><span style="color: #ae81ff">0.3</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">3.8</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">1.2</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">2.5</span><span style="color: #f8f8f2">],</span> <span style="color: #f8f8f2">[</span><span style="color: #ae81ff">11</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">25</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">9</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">26</span><span style="color: #f8f8f2">],</span> <span style="color: #f8f8f2">color</span><span style="color: #f92672">=</span><span style="color: #e6db74">&#39;darkgreen&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">marker</span><span style="color: #f92672">=</span><span style="color: #e6db74">&#39;^&#39;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">ax</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">set_xlim(</span><span style="color: #ae81ff">0.5</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">4.5</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">plt</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">show()</span>
+<span style="color: #75715e">################################################################################</span>
+
+<span style="color: #75715e">################################################################################</span>
+<span style="color: #75715e"># Multiple Axes</span>
+<span style="color: #f8f8f2">fig,</span> <span style="color: #f8f8f2">axes</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">plt</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">subplots(nrows</span><span style="color: #f92672">=</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">ncols</span><span style="color: #f92672">=</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">)</span>
+<span style="color: #75715e"># The axes object that was returned is a 2D numpy object array.</span>
+<span style="color: #f8f8f2">axes[</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">]</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">set(title</span><span style="color: #f92672">=</span><span style="color: #e6db74">&#39;Upper Left&#39;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">axes[</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">]</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">set(title</span><span style="color: #f92672">=</span><span style="color: #e6db74">&#39;Upper Right&#39;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">axes[</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">]</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">set(title</span><span style="color: #f92672">=</span><span style="color: #e6db74">&#39;Lower Left&#39;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">axes[</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">]</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">set(title</span><span style="color: #f92672">=</span><span style="color: #e6db74">&#39;Lower Right&#39;</span><span style="color: #f8f8f2">)</span>
+
+<span style="color: #75715e"># To iterate over all items in a multidimensional numpy array, use the `flat` attribute</span>
+<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">ax</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">axes</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">flat:</span>
+        <span style="color: #75715e"># Remove all xticks and yticks...</span>
+            <span style="color: #f8f8f2">ax</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">set(xticks</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">[])</span>
+
+            <span style="color: #f8f8f2">plt</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">show()</span>
+
+
+<span style="color: #75715e"># # plt.subplots(): When it&#39;s called with no arguments, it creates a new figure with a single subplot.</span>
+<span style="color: #75715e"># # Any time you see something like</span>
+<span style="color: #75715e">#     fig = plt.figure()</span>
+<span style="color: #75715e">#     ax = fig.add_subplot(111)</span>
+<span style="color: #75715e"># # You can replace it with:</span>
+<span style="color: #75715e">#     fig, ax = plt.subplots()</span>
+<span style="color: #75715e">################################################################################</span>
+
+<span style="color: #75715e">################################################################################</span>
+<span style="color: #75715e"># Jupyter/IPython magic functions</span>
+<span style="color: #75715e"># %load path/file_name.py</span>
+<span style="color: #75715e"># # the content of filename.py will be loaded in the next cell.</span>
+<span style="color: #75715e"># %%writefile filename.py</span>
+<span style="color: #75715e"># # To save the cell content back into a file add the cell-magic %%writefile filename.py at the beginning of the cell and run it. Beware that if a file with the same name already exists it will be silently overwritten.</span>
+<span style="color: #75715e"># %magic</span>
+<span style="color: #75715e"># %lsmagic</span>
+<span style="color: #75715e"># # For general help on magic functions type &quot;%magic&quot; For a list of the available magic functions, use %lsmagic. For a description of any of them, type %magic_name?, e.g. &#39;%cd?&#39;.</span>
+<span style="color: #75715e">################################################################################</span>
+
+
+<span style="color: #f8f8f2">EOF</span>
+<span style="color: #75715e"># TBC</span>
+</pre></td></tr></table></div>

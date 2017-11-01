@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.25">
+        <title>What is Bitcoin?</title>
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-75890513-1', 'auto');
+            ga('send', 'pageview');
+                </script>
+    </head>
+
+    <body style="width: 960px; background-color: #000000; margin: 0 auto;">
+
+        <center><h1 style="color: #ffffff;">What is Bitcoin?</h1></center>
+        <br>
+        <p style="color: #ffffff" align="right"><b><i> Author: Xianxin Wang</i></b></p>
+        <p style="color: #ffffff" align="right"><b><i>All rights reserved. Use by permission.</i></b><p>
+        <div class=text style="color: #00ff00; font-size: 18px;">
+            <br>
+            <p>The idea of Bitcoin is not that complex. You only need to know 3 simple concepts:</p>
+            <hr>
+            <ol>
+                <li><p><u><b>Hash function</b></u>:  A hash function is a <u><b>one-way</b></u> encryption function. For example: I want to use hash function to encrypt Einstein's paper on relativity.</p>
+                    <ul>
+                        <li><p><u><b>Input</b></u>: Now we have the input of the hash function: A bunch of words, and they are stored on the computer in binary form like 010101001010... All information in classic computers is stored in binary form. So anything in a computer can be hashed. </p></li>
+                        <li><p><u><b>The function</b></u>: What does hash function do with its input? It just scrambles the 0s and 1s. For example, move the last 2 digits to the beginning, delete the 127th and 364th digits, flip the first 10% of all the digits from 0 to 1 or 1 to 0, and so on. </p></li>
+                        <li><p><u><b>Output(digest)</b></u>: The output of the hash function is just a bunch of numbers and its length depends the hash function you use. For example, the output of the SHA-256 function with input "bitcoin" is: 0x6b88c087247aa2f07ee1c5956b8e1a9f4c7f892a70e324f1bb3d161e05ca107b</p></li>
+                    </ul>
+                    <p>As you can see now: It is very difficult to get the input from the output of a well-designed hash function. That's the reason why we say it is <u><b>one-way.</b></u><p>
+                </li>
+                <hr>
+                <li><p><u><b>Peer-to-peer(P2P) network</b></u>: P2P network is a decentralized network. The network is composed of many nodes, and only these nodes. These nodes are of equal importance to the network, so there is no such thing like a central node. If some nodes are disconnected from the network, the network will continue to exist without a problem. New nodes can easily join the network.</p>
+                </li>
+                <hr>
+                <li>
+                    <p><u><b>Block-chain</b></u>: Block-chain is a chain of information blocks. Inside each block there is all the transaction history for past a few minutes (around 10 minutes on average). There is also other stuff like a pointer to previous block in the chain.</p>
+                    <ul>
+                        <li><p><u><b>Purpose</b></u>: Block-chain serves as the public ledger of Bitcoin. It contains every single transaction that happened since the birth of Bitcoin, Jan 3rd, 2009. Based on the information in this block-chain, the Bitcoin network can prevent the problem of <u><b>double-spending.</b></u></p></li>
+                        <li><p><u><b>Controlled supply</b></u>: On average, every 10 minutes a new block will be added to the block chain. It is done by some nodes in Bitcoin network who contribute their own computers to complete this job, and we call them "miners". People rush to be the node who adds new block to the block-chain because of the <u><b>reward of "controlled supply"</b></u>. The node who successfully adds the new block to the chain will be rewarded a certain number of Bitcoins. As of Sept. 2017, the reward is 12.5 Bitcoins. The reward is cut by half approximatelyevery 3.75 years. By year 2140, the Bitcoin in circulation will reach its upper limit of 21,000,000, if there is no upgrade to its source code. </p></li>
+                        <li><p><u><b>The key question</b></u>: How can we trust the node who adds the new block to the chain? Will he/she/they add incorrect information to the block for his/her/their own benefit? For example, a person  spends 1 Bitcoin 5 minutes ago, he/she wants to remove this transaction history from the block-chain.</p></li>
+                        <li><p><u><b>The very reasonable assumption</b></u>: We assume that the majority of the nodes who want to find the new block are not malicious. They just want the reward.</p></li>
+                        <li>
+                            <p><u><b>The absolute brilliance</b></u>: The Bitcoin requires each miner to hash the transaction history together with an arbitrary nonce (number used once) set by the miner. And for the network to accept this block, the output(digest) of the hash function needs to start with several 0s, for example: 0x00000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f.</p>
+                        </li>
+                    </ul>
+                    <p>Because the output is random (we cannot predict the result with going through the hash function), and the hash function is one-way, the only way to get such an output is by "try and error", by doing a lot of hashing. If the computers are equally powerful (How many times the computer can run the hash function in 1 second.), then each node has the same probability of finding the new block and get the reward. If you buy a more powerful computer, you increase your chance of being rewarded. So, to attack the block-chain, the malicious node needs huge amount of computation power, which is impractical. We now reach the conclusion that it is impractical to reverse a Bitcoin transaction.</p>
+                </li>
+            </ol>
+            <hr>
+        </div>
+        <br>
+    </body>
+</html>
+

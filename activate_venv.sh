@@ -1,0 +1,1 @@
+. ~/.virtualenvs/django/bin/activate
