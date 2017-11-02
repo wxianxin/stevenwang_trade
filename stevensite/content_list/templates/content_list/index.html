@@ -5,7 +5,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=0.25">
     <title>{{ category }}</title>
     <!-- !!! NOT WORKING !!! -->
     <link rel="stylesheet" type="text/css" href="{% static 'content_list/style.css' %}" />
@@ -16,7 +15,7 @@
 
 
 <body style="max-width: 1080px; background-color: #000000; margin: 0 auto !important; float: none !important;">
-    <img src="{% static "content_list/images/" %}header.png" alt="header.png", height=150px>
+    <img src="{% static "content_list/images/header.png" %}" alt="header.png", height=150px>
     
     {% if article_list %}
     <ul class="article_list">
