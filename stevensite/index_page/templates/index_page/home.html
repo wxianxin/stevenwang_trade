@@ -47,16 +47,7 @@
         {% if article_list %}
         <ul style="margin: 0; padding: 0px;">
             {% for article in article_list %}
-
-            <li><a href="/bitcoin/btc_intro.html"><h3>What is Bitcoin and what is Block-chain?</h3></a></li>
-            <li><a href="/files/SVM.pdf"><h3>Intuition of SVM(Support Vector Machine) and Its Kernel Function</h3></a></li>
-            <li><a href="option+delta+and+tau.html"><h3>Visualizing and Understanding Option Delta and Maturity</h3></a></li>
-            <li><a href="/readings"><h3>Some Readings</h3></a></li>
-            <li><a href="/trading"><h3>An automated triangular arbitrage opportunity with realization in python</h3></a></li>
-            <li><a href="/stock"><h3>Stock Picks</h3></a></li>
-            <li><a href="/RITC-algo"><h3>Demo of RITC Algo Trading case</h3></a></li>
-            <li><a href="/bitcoin"><h3>My experience with Bitcoin</h3></a></li>
-            <li><a href="/files/stochastic.pdf"><h3>Stochastic Basics</h3></a></li>
+            <li><a href="/bitcoin/btc.html"><h3>{{ article.title_text }}</h3></a></li>
             {% endfor %}
         </ul>
         {% else %}
