@@ -1,21 +1,22 @@
 from django.views import generic
 
-from .models import Article, StockArticle
+from .models import Article, LinkToPostStatic, StockArticle
 
 # Create your views here.
-class HomePageView(generic.ListView):
+class HomepageView(generic.ListView):
     template_name = 'index_page/home.html'
 
-    def get_queryset(self):
-        return Article.objects.all()
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(generic.ListView, self).get_context_data(**kwargs)
+        # Add in a QuerySet of all the models 
+        context['article_link_list'] = LinkToPostStatic.objects.all()
+        context['quick_link_list'] = LinkToPostStatic.objects.all()
+        return context
 
-#class HomePageView(generic.base.TemplateView):
-#
-#    template_name = 'index_page/home.html'
-#
-#    def get_article_list(self, **kwargs):
-#        article_list= Article.objects.all()
-#        return article_list
+
+    def get_queryset(self):
+        return LinkToPostStatic.objects.all()
 
 class IndexView(generic.ListView):
     template_name = 'index_page/list.html'

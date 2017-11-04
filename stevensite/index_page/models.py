@@ -11,8 +11,26 @@ class Article(models.Model):
         return self.title_text
 
 
+class LinkToPostStatic(models.Model):
+    link_text = models.CharField(max_length=200, default='posts/static_html/', primary_key=True)
+    title_text = models.CharField(max_length=200, default='title')
+
+    def __str__(self):
+        return self.title_text
+
+
+class QuickLink(models.Model):
+    link_text = models.CharField(max_length=200, default='posts/static_html/quick_link/', primary_key=True)
+    title_text = models.CharField(max_length=200, default='title')
+
+    def __str__(self):
+        return self.title_text
+
+
+
 class StockArticle(Article):
     symbol_text = models.CharField(max_length=8)
 
     def __str__(self):
         return self.title_text
+
