@@ -14,10 +14,14 @@ def static_HTML(request, file_name):
     return render(request, file_path)
 
 def static_pdf(request, file_name):
-    file_path = 'posts/static/posts/pdf/' + file_name + '.pdf'
+    url = 'http://stevenwang.trade/static/posts/pdf/' + file_name + '.pdf'
+    return HttpResponseRedirect(url)
 
-    with open(file_path, 'rb') as pdf:
-        response = HttpResponse(pdf.read(), content_type='application/pdf')
-        response['Content-Disposition'] = 'inline;filename=some_file.pdf'
-        return response
-    pdf.closed
+#def static_pdf(request, file_name):
+#    file_path = 'posts/static/posts/pdf/' + file_name + '.pdf'
+#
+#    with open(file_path, 'rb') as pdf:
+#        response = HttpResponse(pdf.read(), content_type='application/pdf')
+#        response['Content-Disposition'] = 'inline;filename=some_file.pdf'
+#        return response
+#    pdf.closed

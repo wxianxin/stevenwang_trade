@@ -38,39 +38,42 @@
         <div class="col-xs-9">
 
         <h2 style="color: #ffffff; font-style: italic;">Some thoughts:</h2>
-        {% if article_link_list %}
         <ul style="margin: 0; padding: 0px;">
+        {% if article_link_list %}
             {% for link in article_link_list %}
             <li><a href={{ link.link_text }}><h3>{{ link.title_text }}</h3></a></li>
             {% endfor %}
-        </ul>
         {% else %}
             <p>No article is available.</p>
         {% endif %}
 
         {% if article_pdf_list %}
-        <ul style="margin: 0; padding: 0px;">
             {% for pdf in article_pdf_list %}
             <li><a href={{ pdf.link_text }}><h3>{{ pdf.title_text }}</h3></a></li>
             {% endfor %}
-        </ul>
         {% else %}
-            <p>No article is available.</p>
+            <p>No article pdf is available.</p>
         {% endif %}
+
+        <li><a href="static/static/RITC_algo"><h3>Demo of RITC Algo Trading case</h3></a></li>
+            <li><a href="static/static/bitcoin"><h3>My experience with Bitcoin</h3></a></li>
+        </ul>
+
+        <a href="stocks"><h2 style="color: #ffffff; font-style: italic; text-decoration: underline;">Some stock picks</h2></a>
 
 
         <h2 style="color: #ffffff; font-style: italic;">Some readings:</h2>
-        {% if reading_pdf_list %}
         <ul style="margin: 0; padding: 0px;">
+        <p>Some lines that I consider particularly valuable are highlighted.</p>
+        {% if reading_pdf_list %}
             {% for pdf in reading_pdf_list %}
             <li><a href={{ pdf.link_text }}><h3>{{ pdf.title_text }}</h3></a></li>
             {% endfor %}
-        </ul>
         {% else %}
             <p>No reading is available.</p>
         {% endif %}
+        </ul>
 
-        <a href="stocks"><h2 style="color: #ffffff; font-style: italic; text-decoration: underline;">Some stock picks</h2></a>
 
         </div>
     
@@ -78,25 +81,25 @@
         <div class="links">
 
         <h2 style="color: #ffffff; font-style: italic;">Some notes:</h2>
-        {% if notes_list %}
         <ul style="padding: 0; list-style-type: none;">
+        {% if notes_list %}
             {% for link in notes_list %}
             <li><a href={{ link.link_text }}><h3>{{ link.title_text }}</h3></a></li>
             {% endfor %}
-        </ul>
         {% else %}
             <p>No notes is available.</p>
         {% endif %}
 
         {% if notes_pdf_list %}
-        <ul style="padding: 0; list-style-type: none;">
             {% for pdf in notes_pdf_list %}
             <li><a href={{ pdf.link_text }}><h3>{{ pdf.title_text }}</h3></a></li>
             {% endfor %}
-        </ul>
         {% else %}
-            <p>No notes is available.</p>
+            <p>No notes pdf is available.</p>
         {% endif %}
+
+            <li><a href="http://mathesaurus.sourceforge.net/octave-r.html"><h3>"R for MATLAB users"</h3></a></li>
+        </ul>
 
         <h2 style="color: #ffffff; font-style: italic;">Toolbox</h2>
         {% if toolbox_pdf_list %}

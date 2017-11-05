@@ -1,6 +1,6 @@
 {% load static %}                                                               
 
-<!DOCTYPE html>                                                                 
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -17,23 +17,21 @@
 <body style="max-width: 1080px; background-color: #000000; margin: 0 auto !important; float: none !important;">
     <img src="{% static "index_page/stocks/images/header.png" %}" alt="header.png", height=150px>
     
+    <ul class="article_list" style="list-style-type: none;">
     {% if stock_article_list %}
-    <ul class="article_list">
         {% for stock in stock_article_list %}
         <li class="row">
             <div class="col-xs-3"> 
-                <img src="{% static 'index_page/stocks/images/' %}{{ stock.name_text }}.png" alt=logo.png width=200px>
+                <center><img src="{% static 'index_page/stocks/images/' %}{{ stock.name_text }}.png" alt=logo.png style="max-width:220px; max-height:100px;"></center>
                 <p><center>{{ stock.name_text }}</center></p>
             </div>
             <a href={{ stock.link_text }}><h2 class="col-xs-9">{{ stock.title_text }}</h2></a>
         </li>
         {% endfor %}
-    </ul>
-
     {% else %}
         <p>No stock article is available.</p>
     {% endif %}
+    </ul>
 </body>
 </html>
 
-    <title>{{ category }}</title>
