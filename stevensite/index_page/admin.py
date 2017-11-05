@@ -5,6 +5,5 @@ from .models import *
 
 admin.site.register(Article)
 admin.site.register(LinkToPostStatic)
-admin.site.register(QuickLink)
-admin.site.register(StockArticle)
+admin.site.register(PdfFile)
 

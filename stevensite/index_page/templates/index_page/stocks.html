@@ -19,13 +19,13 @@
     
     {% if stock_article_list %}
     <ul class="article_list">
-        {% for stock_article in stock_article_list %}
+        {% for stock in stock_article_list %}
         <li class="row">
             <div class="col-xs-3"> 
-                <img src="{% static 'index_page/stocks/images/' %}{{ stock_article.symbol_text }}.png" alt=logo.png width=200px>
-                <p><center>{{ stock_article.symbol_text }}</center></p>
+                <img src="{% static 'index_page/stocks/images/' %}{{ stock.name_text }}.png" alt=logo.png width=200px>
+                <p><center>{{ stock.name_text }}</center></p>
             </div>
-            <p><h2 class="col-xs-9">{{ stock_article.title_text }}</h2></p>
+            <a href={{ stock.link_text }}><h2 class="col-xs-9">{{ stock.title_text }}</h2></a>
         </li>
         {% endfor %}
     </ul>

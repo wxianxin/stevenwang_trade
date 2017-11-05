@@ -14,36 +14,30 @@
 </head>
 <body style="max-width: 1080px; background-color: #000000; margin: 0 auto;">
     
-    <div class="header">
-        <img src="{% static "index_page/images/header.png"%}" align="middle" style="height: 300px;">
-        <div class="col-xs-9" style="height: 300px;">
+    <div class="header" style="background-image: url({% static "index_page/images/header.png"%}); background-size: cover;">
+        <div class="col-xs-8" style="height: 300px;">
             <h1>Welcome!</h1>
-            <h3>(This site has been rewritten in Django; Under construction.)</h3>
+            <h3>(Django backend deployed; Under construction.)</h3>
+
+            <h3 style="margin-top: 10px;">My Github and Linkedin:</h3>
+            <div class="link", style="height: 100px;">
+            <a href="https://github.com/wxianxin"><img src="{% static "index_page/images/github_logo.png"%}" alt="github logo" style="height: 100px; margin-left: 20px;"></a>
+            <a href="https://www.linkedin.com/in/xianxin"><img src="{% static "index_page/images/linkedin_logo.png"%}" alt="linkedin logo" style="height: 100px; margin-right: 20px;"></a>
+            </div>
+        </div>
+
+        <div class="col-xs-4">
+
             <h4>I have to set deadlines for myself, otherwise I will never get the non-life-threatening things done. </h4>
             <h4>20171115 - write c++ matrix operation library, c++ brent optimization library; assess coding time for multivariable optimization(Nelder-Mead) library in c++</h4>
             <h4>20171120 - set deadline for option market volatitlity parameters app</h4>
-
-            <h3 style="margin-top: 10px;">My Github and Linkedin:</h3>
-            <ul class="link" style="list-style: none; margin: 0; padding: 0px;">
-                <li>
-                <a href="https://github.com/wxianxin"><img src="{% static "index_page/images/github_logo.png"%}" alt="github logo" style="height: 100px; margin-left: 20px;"></a>
-
-                <a href="https://www.linkedin.com/in/xianxin"><img src="{% static "index_page/images/linkedin_logo.png"%}" alt="linkedin logo" style="height: 100px; margin-right: 20px;"></a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="col-xs-3">
-            <!--
-            <div class="photo" align="middle" style="postion: absolute;">
-            <img src="images/photo.png" alt=photo height=452px style="z-index: -1;"> 
-            </div>
-            -->
         </div>
     </div>
     
-    <div class="row_2" style="margin-top: 100px; display: inline-block;">
+    <div class="row_2">
         <div class="col-xs-9">
+
+        <h2 style="color: #ffffff; font-style: italic;">Some thoughts:</h2>
         {% if article_link_list %}
         <ul style="margin: 0; padding: 0px;">
             {% for link in article_link_list %}
@@ -53,20 +47,66 @@
         {% else %}
             <p>No article is available.</p>
         {% endif %}
-        </div>
-    
-        <div class="col-xs-3">
-        <div class="links" style="margin-left: 20px">
 
-        <h2>Quick links:</h2>
-        {% if article_link_list %}
-        <ul style="margin-left: 20px;">
-            {% for link in quick_link_list %}
-            <li><a href={{ link.link_text }}><h3>{{ link.title_text }}</h3></a></li>
+        {% if article_pdf_list %}
+        <ul style="margin: 0; padding: 0px;">
+            {% for pdf in article_pdf_list %}
+            <li><a href={{ pdf.link_text }}><h3>{{ pdf.title_text }}</h3></a></li>
             {% endfor %}
         </ul>
         {% else %}
             <p>No article is available.</p>
+        {% endif %}
+
+
+        <h2 style="color: #ffffff; font-style: italic;">Some readings:</h2>
+        {% if reading_pdf_list %}
+        <ul style="margin: 0; padding: 0px;">
+            {% for pdf in reading_pdf_list %}
+            <li><a href={{ pdf.link_text }}><h3>{{ pdf.title_text }}</h3></a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <p>No reading is available.</p>
+        {% endif %}
+
+        <a href="stocks"><h2 style="color: #ffffff; font-style: italic; text-decoration: underline;">Some stock picks</h2></a>
+
+        </div>
+    
+        <div class="col-xs-3">
+        <div class="links">
+
+        <h2 style="color: #ffffff; font-style: italic;">Some notes:</h2>
+        {% if notes_list %}
+        <ul style="padding: 0; list-style-type: none;">
+            {% for link in notes_list %}
+            <li><a href={{ link.link_text }}><h3>{{ link.title_text }}</h3></a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <p>No notes is available.</p>
+        {% endif %}
+
+        {% if notes_pdf_list %}
+        <ul style="padding: 0; list-style-type: none;">
+            {% for pdf in notes_pdf_list %}
+            <li><a href={{ pdf.link_text }}><h3>{{ pdf.title_text }}</h3></a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <p>No notes is available.</p>
+        {% endif %}
+
+        <h2 style="color: #ffffff; font-style: italic;">Toolbox</h2>
+        {% if toolbox_pdf_list %}
+        <ul style="padding: 0; list-style-type: none;">
+            {% for pdf in toolbox_pdf_list %}
+            <li><a href={{ pdf.link_text }}><h3>{{ pdf.title_text }}</h3></a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <p>No toolbox is available.</p>
         {% endif %}
 
         </div>
