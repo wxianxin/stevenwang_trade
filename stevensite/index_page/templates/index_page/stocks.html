@@ -13,9 +13,17 @@
     <script> (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-75890513-1', 'auto'); ga('send', 'pageview'); </script>
 </head>
 
+<style>
+body {
+    max-width: 1080px;
+    background-color: #000000;
+    margin: 0 auto;
+}
 
-<body style="max-width: 1080px; background-color: #000000; margin: 0 auto !important; float: none !important;">
-    <img src="{% static "index_page/stocks/images/header.png" %}" alt="header.png", height=150px>
+</style>
+
+<body>
+    <img src="{% static "index_page/stocks/images/header.png" %}" alt="header.png", style="max-width:1080px;">
     
     <ul class="article_list" style="list-style-type: none;">
     {% if stock_article_list %}

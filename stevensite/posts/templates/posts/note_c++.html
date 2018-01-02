@@ -1,0 +1,1258 @@
+<!-- HTML generated using hilite.me --><div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #75715e">// Steven Wang 2015</span>
+
+<span style="color: #75715e">//------------------------------------------------------------------------------</span>
+<span style="color: #75715e">//------------------------------------------------------------------------------</span>
+<span style="color: #75715e">// Compile (Linux)</span>
+<span style="color: #75715e">/*</span>
+<span style="color: #75715e">Four steps of compiling:</span>
+<span style="color: #75715e">1. Pre-processing</span>
+<span style="color: #75715e">2. Complication</span>
+<span style="color: #75715e">3. Assembly</span>
+<span style="color: #75715e">4. Linking</span>
+<span style="color: #75715e">*/</span>
+<span style="color: #f92672">--------------------------</span>
+<span style="color: #f8f8f2">cpp</span> <span style="color: #f8f8f2">(.i)</span>
+<span style="color: #f8f8f2">gcc</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">S</span> <span style="color: #f8f8f2">(.s)</span>
+<span style="color: #f8f8f2">gcc</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">c</span> <span style="color: #f8f8f2">(.o)</span>
+<span style="color: #f8f8f2">gcc</span> <span style="color: #f8f8f2">(executable</span> <span style="color: #f8f8f2">binary)</span>
+<span style="color: #f92672">--------------------------</span>
+
+<span style="color: #f8f8f2">ls</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">F</span> <span style="color: #75715e">//classify</span>
+
+<span style="color: #ae81ff">1.</span> <span style="color: #f8f8f2">Pre</span><span style="color: #f92672">-</span><span style="color: #f8f8f2">compile</span><span style="color: #f92672">:</span>
+<span style="color: #75715e">// add stuff to program</span>
+
+<span style="color: #75715e"># define PI 3.14 // find and replase</span>
+
+<span style="color: #75715e">#ifdef</span>
+<span style="color: #75715e">#ifndef</span>
+<span style="color: #75715e">#endif</span>
+<span style="color: #75715e">// why: so that we only need to compile cpp files once.</span>
+<span style="color: #75715e">// the .h file declares code, and the .cpp file implements that declaration. For this reason, we generally during compilation compile each .cpp file into an object and then link those objects.</span>
+
+<span style="color: #f8f8f2">cpp</span> <span style="color: #75715e">// C preprocessor</span>
+<span style="color: #f8f8f2">cpp</span> <span style="color: #f8f8f2">hello.c</span> <span style="color: #f8f8f2">hello.i</span>
+
+<span style="color: #f8f8f2">gcc</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">S</span> <span style="color: #f8f8f2">hello.i</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">o</span> <span style="color: #f8f8f2">hello.s</span> <span style="color: #75715e">// Assembly language</span>
+<span style="color: #f8f8f2">gcc</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">c</span> <span style="color: #f8f8f2">hello.s</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">o</span> <span style="color: #f8f8f2">hello.o</span> <span style="color: #75715e">// Machine language</span>
+<span style="color: #f8f8f2">gcc</span> <span style="color: #f8f8f2">hello.o</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">o</span> <span style="color: #f8f8f2">hello</span> <span style="color: #75715e">// Binary files</span>
+
+<span style="color: #f92672">-</span><span style="color: #f8f8f2">c</span> <span style="color: #75715e">// compile only</span>
+
+<span style="color: #f8f8f2">gcc</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">c</span> <span style="color: #f8f8f2">hello.c</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">o</span> <span style="color: #f8f8f2">hello.o</span>
+<span style="color: #f8f8f2">gcc</span> <span style="color: #f8f8f2">hello.o</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">o</span> <span style="color: #f8f8f2">hello</span>
+
+<span style="color: #f8f8f2">which</span> <span style="color: #f8f8f2">write</span> <span style="color: #75715e">// see which file is being called</span>
+
+<span style="color: #f8f8f2">gcc</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">c</span> <span style="color: #f8f8f2">main.c</span> <span style="color: #f8f8f2">function.c</span>
+<span style="color: #f8f8f2">gcc</span> <span style="color: #f8f8f2">main.o</span> <span style="color: #f8f8f2">function.o</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">o</span> <span style="color: #f8f8f2">my_program</span>
+
+<span style="color: #75715e">// Directory</span>
+
+<span style="color: #f8f8f2">gcc</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">I</span> <span style="color: #f8f8f2">path</span><span style="color: #f92672">/</span> <span style="color: #f8f8f2">main.c</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">o</span> <span style="color: #f8f8f2">my_program</span>	<span style="color: #75715e">// set directory where to look for other files, like header files</span>
+
+<span style="color: #75715e">//!!! It is only necessary to compile the files changed and everything depends on the changed files</span>
+
+<span style="color: #f8f8f2">gcc</span> <span style="color: #f8f8f2">square_root.c</span>	<span style="color: #75715e">// doesn&#39;t work</span>
+<span style="color: #f8f8f2">gcc</span> <span style="color: #f8f8f2">square_root.c</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">lm</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">o</span> <span style="color: #f8f8f2">square_root</span> <span style="color: #75715e">// works</span>
+<span style="color: #f92672">-</span><span style="color: #f8f8f2">lm</span>	<span style="color: #75715e">// add math library; the name of the math library is &quot;m&quot;</span>
+<span style="color: #f8f8f2">libm.so</span><span style="color: #ae81ff">.6</span>
+<span style="color: #75715e">//!!! only include the text between &quot;lib&quot; &amp; &quot;.so&quot;</span>
+
+<span style="color: #f8f8f2">ldd</span>	<span style="color: #75715e">// dynamic linker </span>
+<span style="color: #f8f8f2">ldd</span> <span style="color: #f8f8f2">my_program</span>	<span style="color: #75715e">// print shared library dependencies</span>
+<span style="color: #f8f8f2">ldconfig</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">p</span>	<span style="color: #75715e">// print all shared library</span>
+
+<span style="color: #f92672">/</span><span style="color: #f8f8f2">include</span>	<span style="color: #75715e">// text files of header files or .h files</span>
+<span style="color: #f92672">/</span><span style="color: #f8f8f2">lib</span>	<span style="color: #75715e">// compiled binary files of .so files, shared library</span>
+
+<span style="color: #75715e">//!!! Shared library is not compiled into the program but are called when the program runs</span>
+
+<span style="color: #f8f8f2">gcc</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">I</span> <span style="color: #75715e">// include</span>
+<span style="color: #f8f8f2">gcc</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">L</span> <span style="color: #75715e">// path of lib</span>
+<span style="color: #f8f8f2">gcc</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">l</span> <span style="color: #75715e">// library</span>
+
+<span style="color: #f8f8f2">find</span> <span style="color: #f92672">/</span><span style="color: #f8f8f2">path</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">name</span> <span style="color: #e6db74">&quot;name&quot;</span>
+
+<span style="color: #f92672">???</span>
+<span style="color: #f8f8f2">LD_LIBRARY_PATH</span>
+<span style="color: #ae81ff">1.</span> <span style="color: #f8f8f2">quick</span> <span style="color: #f8f8f2">way,</span> <span style="color: #f8f8f2">make</span> <span style="color: #f8f8f2">a</span> <span style="color: #f8f8f2">shell</span> <span style="color: #f8f8f2">script</span>
+<span style="color: #ae81ff">2.</span> 
+<span style="color: #f92672">???</span>
+
+<span style="color: #75715e">// inline: to eliminate calling overhead.</span>
+<span style="color: #75715e">// With inline keyword, the compiler replaces the function call statement with the function code itself (process called expansion) and then compiles the entire code.</span>
+
+<span style="color: #f8f8f2">makefile:</span>
+<span style="color: #75715e">// we do not need to recompile the same thing</span>
+<span style="color: #f92672">-----------------------------------</span>
+<span style="color: #f8f8f2">w.o</span><span style="color: #f92672">:</span> <span style="color: #f8f8f2">w.c</span>
+	<span style="color: #f8f8f2">gcc</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">c</span> <span style="color: #f8f8f2">w.c</span>
+
+<span style="color: #f8f8f2">m.o</span><span style="color: #f92672">:</span> <span style="color: #f8f8f2">m.c</span> <span style="color: #f8f8f2">m.h</span>
+	<span style="color: #f8f8f2">gcc</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">c</span> <span style="color: #f8f8f2">m.c</span>
+
+<span style="color: #f8f8f2">clean:</span>
+	<span style="color: #f8f8f2">rm</span> <span style="color: #f92672">*</span><span style="color: #f8f8f2">.o</span>
+<span style="color: #f92672">-----------------------------------</span>
+
+<span style="color: #f8f8f2">w.o</span><span style="color: #f92672">:</span> <span style="color: #f8f8f2">w.c</span>
+<span style="color: #75715e">//target: prerequisite</span>
+
+<span style="color: #f8f8f2">timestamp:</span> <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">w.c(or</span> <span style="color: #f8f8f2">some</span> <span style="color: #f8f8f2">header</span> <span style="color: #f8f8f2">files)</span> <span style="color: #f8f8f2">is</span> <span style="color: #f8f8f2">newer</span> <span style="color: #f8f8f2">than</span> <span style="color: #f8f8f2">w.o,</span> <span style="color: #f8f8f2">then</span> <span style="color: #f8f8f2">it</span> <span style="color: #f8f8f2">will</span> <span style="color: #f8f8f2">excecute</span> <span style="color: #f8f8f2">the</span> <span style="color: #f8f8f2">command</span> <span style="color: #f8f8f2">line</span> <span style="color: #f8f8f2">below</span>
+
+<span style="color: #f92672">-----------------------------------</span>
+<span style="color: #f8f8f2">INCLUDE</span><span style="color: #f92672">=/</span><span style="color: #f8f8f2">path</span>
+
+<span style="color: #f8f8f2">m.o</span><span style="color: #f92672">:</span> <span style="color: #f8f8f2">m.c</span> <span style="color: #f8f8f2">m.h</span>
+<span style="color: #f8f8f2">gcc</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">c</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">I</span><span style="color: #960050; background-color: #1e0010">$</span><span style="color: #f8f8f2">INCLUDE</span> <span style="color: #f8f8f2">m.c</span>
+<span style="color: #f92672">-----------------------------------</span>
+
+<span style="color: #f8f8f2">make</span> <span style="color: #f8f8f2">all</span>
+<span style="color: #f8f8f2">make</span> <span style="color: #f8f8f2">install</span>
+<span style="color: #f8f8f2">make</span> <span style="color: #f8f8f2">clean</span>
+<span style="color: #f8f8f2">make</span> <span style="color: #f8f8f2">..........</span>
+
+<span style="color: #75715e">//------------------------------------------------------------------------------</span>
+<span style="color: #75715e">//------------------------------------------------------------------------------</span>
+<span style="color: #75715e">// Constants</span>
+<span style="color: #75715e">// Literals</span>
+<span style="color: #75715e">// For octal literals, the digits are preceded with a 0 (zero) character. And for hexadecimal, they are preceded by the characters 0x (zero, x).</span>
+<span style="color: #ae81ff">75</span>         <span style="color: #75715e">// decimal</span>
+<span style="color: #ae81ff">0113</span>       <span style="color: #75715e">// octal</span>
+<span style="color: #ae81ff">0x4b</span>       <span style="color: #75715e">// hexadecimal</span>
+
+<span style="color: #75715e">// certain suffixes may be appended to an integer literal to specify a different integer type</span>
+<span style="color: #ae81ff">75</span>         <span style="color: #75715e">// int</span>
+<span style="color: #ae81ff">75u</span>        <span style="color: #75715e">// unsigned int</span>
+<span style="color: #ae81ff">75l</span>        <span style="color: #75715e">// long</span>
+<span style="color: #ae81ff">75ul</span>       <span style="color: #75715e">// unsigned long </span>
+<span style="color: #ae81ff">75lu</span>       <span style="color: #75715e">// unsigned long</span>
+<span style="color: #75715e">// In all the cases above, the suffix can be specified using either upper or lowercase letters.</span>
+
+<span style="color: #75715e">// floating point numbers</span>
+<span style="color: #ae81ff">3.14159</span>    <span style="color: #75715e">// 3.14159</span>
+<span style="color: #ae81ff">6.02e23</span>    <span style="color: #75715e">// 6.02 x 10^23</span>
+<span style="color: #ae81ff">1.6e-19</span>    <span style="color: #75715e">// 1.6 x 10^-19</span>
+<span style="color: #ae81ff">3.0</span>        <span style="color: #75715e">// 3.0  </span>
+
+<span style="color: #ae81ff">3.14159</span><span style="color: #f8f8f2">L</span>   <span style="color: #75715e">// long double</span>
+<span style="color: #ae81ff">6.02e23</span><span style="color: #f8f8f2">f</span>   <span style="color: #75715e">// float  </span>
+<span style="color: #75715e">// Any of the letters that can be part of a floating-point numerical constant (e, f, l) can be written using either lower or uppercase letters with no difference in meaning.</span>
+
+<span style="color: #75715e">// Character and string literals</span>
+<span style="color: #e6db74">&#39;z&#39;</span>
+<span style="color: #e6db74">&#39;p&#39;</span>
+<span style="color: #e6db74">&quot;Hello world&quot;</span>
+<span style="color: #e6db74">&quot;How do you do?&quot;</span>
+
+<span style="color: #960050; background-color: #1e0010">\</span><span style="color: #f8f8f2">n</span>	<span style="color: #f8f8f2">newline</span>
+<span style="color: #960050; background-color: #1e0010">\</span><span style="color: #f8f8f2">r</span>	<span style="color: #f8f8f2">carriage</span> <span style="color: #66d9ef">return</span>
+<span style="color: #960050; background-color: #1e0010">\</span><span style="color: #f8f8f2">t</span>	<span style="color: #f8f8f2">tab</span>
+<span style="color: #960050; background-color: #1e0010">\</span><span style="color: #f8f8f2">v</span>	<span style="color: #f8f8f2">vertical</span> <span style="color: #f8f8f2">tab</span>
+<span style="color: #960050; background-color: #1e0010">\</span><span style="color: #f8f8f2">b</span>	<span style="color: #f8f8f2">backspace</span>
+<span style="color: #960050; background-color: #1e0010">\</span><span style="color: #f8f8f2">f</span>	<span style="color: #f8f8f2">form</span> <span style="color: #f8f8f2">feed</span> <span style="color: #f8f8f2">(page</span> <span style="color: #f8f8f2">feed)</span>
+<span style="color: #960050; background-color: #1e0010">\</span><span style="color: #f8f8f2">a</span>	<span style="color: #f8f8f2">alert</span> <span style="color: #f8f8f2">(beep)</span>
+<span style="color: #960050; background-color: #1e0010">\&#39;</span>	<span style="color: #f8f8f2">single</span> <span style="color: #f8f8f2">quote</span> <span style="color: #f8f8f2">(</span><span style="color: #960050; background-color: #1e0010">&#39;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #960050; background-color: #1e0010">\</span><span style="color: #e6db74">&quot;	double quote (&quot;</span><span style="color: #f8f8f2">)</span>
+<span style="color: #960050; background-color: #1e0010">\</span><span style="color: #f92672">?</span>	<span style="color: #f8f8f2">question</span> <span style="color: #f8f8f2">mark</span> <span style="color: #f8f8f2">(</span><span style="color: #f92672">?</span><span style="color: #f8f8f2">)</span>
+<span style="color: #960050; background-color: #1e0010">\\</span>	<span style="color: #f8f8f2">backslash</span> <span style="color: #f8f8f2">(</span><span style="color: #960050; background-color: #1e0010">\</span><span style="color: #f8f8f2">)</span>
+
+<span style="color: #75715e">// Other literals</span>
+<span style="color: #75715e">// Three keyword literals exist in C++: true, false and nullptr</span>
+<span style="color: #66d9ef">bool</span> <span style="color: #f8f8f2">foo</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">true;</span>
+<span style="color: #66d9ef">bool</span> <span style="color: #f8f8f2">bar</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">false;</span>
+<span style="color: #66d9ef">int</span><span style="color: #f92672">*</span> <span style="color: #f8f8f2">p</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">nullptr;</span>
+
+<span style="color: #75715e">// Typed constant expressions</span>
+<span style="color: #75715e">// Sometimes, it is just convenient to give a name to a constant value:</span>
+<span style="color: #66d9ef">const</span> <span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">pi</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">3.1415926</span><span style="color: #f8f8f2">;</span>
+<span style="color: #66d9ef">const</span> <span style="color: #66d9ef">char</span> <span style="color: #f8f8f2">tab</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&#39;\t&#39;</span><span style="color: #f8f8f2">;</span>
+
+<span style="color: #75715e">// Preprocessor definitions (#define)</span>
+<span style="color: #75715e">// The validity of the types or syntax involved is not checked in any way.</span>
+<span style="color: #75715e">#define NEWLINE &#39;\n&#39;</span>
+
+<span style="color: #75715e">//------------------------------------------------------------------------------</span>
+<span style="color: #75715e">// Basic Input/Output and formatting</span>
+<span style="color: #75715e">// C++ uses a convenient abstraction called streams to perform input and output operations in sequential media such as the screen, the keyboard or a file. A stream is an entity where a program can either insert or extract characters to/from. There is no need to know details about the media associated to the stream or any of its internal specifications. All we need to know is that streams are a source/destination of characters, and that these characters are provided/accepted sequentially.</span>
+<span style="color: #f8f8f2">cout</span>
+<span style="color: #f92672">&lt;&lt;</span>	<span style="color: #75715e">// insertion operator: The &lt;&lt; operator inserts the data that follows it into the stream that precedes it.</span>
+
+<span style="color: #f8f8f2">cin</span>
+<span style="color: #f92672">&gt;&gt;</span> <span style="color: #75715e">// extraction operator: </span>
+<span style="color: #f8f8f2">cin</span> <span style="color: #f92672">&gt;&gt;</span> <span style="color: #f8f8f2">a</span> <span style="color: #f92672">&gt;&gt;</span> <span style="color: #f8f8f2">b;</span>
+<span style="color: #75715e">// is equivalent to</span>
+<span style="color: #f8f8f2">cin</span> <span style="color: #f92672">&gt;&gt;</span> <span style="color: #f8f8f2">a;</span>
+<span style="color: #f8f8f2">cin</span> <span style="color: #f92672">&gt;&gt;</span> <span style="color: #f8f8f2">b;</span>
+<span style="color: #75715e">// cin extraction always considers spaces as terminating the value being extracted</span>
+<span style="color: #75715e">// To get an entire line from cin, there exists a function, called getline, that takes the stream(cin) as first argument, and the string variable as second.</span>
+<span style="color: #f8f8f2">getline(cin,</span> <span style="color: #f8f8f2">mystr);</span>
+<span style="color: #75715e">// Because of human behavior, unless you have a strong reason not to, you should always use getline to get input in your console programs instead of extracting from cin.</span>
+
+<span style="color: #75715e">// stringstream</span>
+<span style="color: #75715e">// The standard header &lt;sstream&gt; defines a type called stringstream that allows a string to be treated as a stream, and thus allowing extraction or insertion operations from / to strings in the same way as they are performed on cin and cout.</span>
+<span style="color: #75715e">// This feature is most useful to convert strings to numerical values and vice versa. </span>
+<span style="color: #f8f8f2">string</span> <span style="color: #a6e22e">mystr</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;1204&quot;</span><span style="color: #f8f8f2">);</span>
+<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">myint;</span>
+<span style="color: #f8f8f2">stringstream(mystr)</span> <span style="color: #f92672">&gt;&gt;</span> <span style="color: #f8f8f2">myint;</span>
+
+<span style="color: #75715e">// output formatting</span>
+<span style="color: #75715e">#include &lt;iomanip&gt;</span>
+
+<span style="color: #75715e">/*</span>
+<span style="color: #75715e">&lt;-15 spaces-&gt;&lt;-15 spaces-&gt;</span>
+<span style="color: #75715e">*/</span>
+<span style="color: #f8f8f2">cout</span> <span style="color: #f92672">&lt;&lt;</span> <span style="color: #f8f8f2">fixed;</span> <span style="color: #75715e">//fix decimal, not scientific notation eg. 1.00</span>
+<span style="color: #f8f8f2">cout</span> <span style="color: #f92672">&lt;&lt;</span> <span style="color: #f8f8f2">setprecision(</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">cout</span> <span style="color: #f92672">&lt;&lt;</span> <span style="color: #f8f8f2">left</span> <span style="color: #f92672">&lt;&lt;</span> <span style="color: #f8f8f2">setw(</span><span style="color: #ae81ff">15</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">&lt;&lt;</span> <span style="color: #e6db74">&quot;Item&quot;</span><span style="color: #f8f8f2">;</span> <span style="color: #75715e">//left aligned</span>
+<span style="color: #f8f8f2">cout</span> <span style="color: #f92672">&lt;&lt;</span> <span style="color: #f8f8f2">right</span> <span style="color: #f92672">&lt;&lt;</span> <span style="color: #f8f8f2">setw(</span><span style="color: #ae81ff">15</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">&lt;&lt;</span> <span style="color: #e6db74">&quot;cost&quot;</span><span style="color: #f8f8f2">;</span>    <span style="color: #75715e">//right aligned</span>
+
+<span style="color: #75715e">// dyanmic memory allocation</span>
+<span style="color: #75715e">// 2 integrated operator: new, delete</span>
+<span style="color: #f8f8f2">pointer</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">type;</span>
+<span style="color: #f8f8f2">pointer</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">type[number_of_elements];</span>
+
+<span style="color: #66d9ef">delete</span> <span style="color: #f8f8f2">pointer;</span>
+<span style="color: #66d9ef">delete</span><span style="color: #f8f8f2">[]</span> <span style="color: #f8f8f2">pointer;</span>
+
+<span style="color: #75715e">//------------------------------------------------------------------------------</span>
+<span style="color: #75715e">// Overloaded functions: parameters are different: different number of parameters, or because any of their parameters are of a different type</span>
+<span style="color: #66d9ef">int</span> <span style="color: #a6e22e">operate</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">a,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">b)</span>
+<span style="color: #f8f8f2">{</span>
+	<span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">(a</span><span style="color: #f92672">*</span><span style="color: #f8f8f2">b);</span>
+<span style="color: #f8f8f2">}</span>
+
+<span style="color: #66d9ef">double</span> <span style="color: #a6e22e">operate</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">a,</span> <span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">b)</span>
+<span style="color: #f8f8f2">{</span>
+	<span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">(a</span> <span style="color: #f92672">/</span> <span style="color: #f8f8f2">b);</span>
+<span style="color: #f8f8f2">}</span>
+
+<span style="color: #75715e">// Function templates: ability to define functions with generic types: overloaded with different parameter types, but with the exact same body</span>
+<span style="color: #75715e">// Defining a function template follows the same syntax as a regular function, except that it is preceded by the template keyword and a series of template parameters enclosed in angle-brackets &lt;&gt;</span>
+<span style="color: #75715e">// It makes no difference whether the generic type is specified with keyword class or keyword typename in the template argument list(they are 100 % synonyms in template declarations).</span>
+<span style="color: #75715e">//	template &lt;template-parameters&gt; </span>
+<span style="color: #75715e">//	function-declaration</span>
+
+<span style="color: #66d9ef">template</span> <span style="color: #f92672">&lt;</span><span style="color: #66d9ef">class</span> <span style="color: #a6e22e">SomeType</span><span style="color: #f92672">&gt;</span>
+<span style="color: #f8f8f2">SomeType</span> <span style="color: #f8f8f2">sum(SomeType</span> <span style="color: #f8f8f2">a,</span> <span style="color: #f8f8f2">SomeType</span> <span style="color: #f8f8f2">b)</span>
+<span style="color: #f8f8f2">{</span>
+	<span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">a</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">b;</span>
+<span style="color: #f8f8f2">}</span>
+
+<span style="color: #75715e">//Instantiating a template</span>
+<span style="color: #75715e">// name &lt;template-arguments&gt;(function-arguments)</span>
+<span style="color: #f8f8f2">x</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">sum</span><span style="color: #f92672">&lt;</span><span style="color: #66d9ef">int</span><span style="color: #f92672">&gt;</span><span style="color: #f8f8f2">(</span><span style="color: #ae81ff">10</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">20</span><span style="color: #f8f8f2">);</span>
+
+<span style="color: #f8f8f2">k</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">sum</span><span style="color: #f92672">&lt;</span><span style="color: #66d9ef">int</span><span style="color: #f92672">&gt;</span><span style="color: #f8f8f2">(i,</span> <span style="color: #f8f8f2">j);</span>
+<span style="color: #f8f8f2">h</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">sum</span><span style="color: #f92672">&lt;</span><span style="color: #66d9ef">double</span><span style="color: #f92672">&gt;</span><span style="color: #f8f8f2">(f,</span> <span style="color: #f8f8f2">g);</span>
+<span style="color: #75715e">// compiler is even able to deduce the data type automatically without having to explicitly specify it within angle brackets</span>
+<span style="color: #f8f8f2">k</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">sum</span> <span style="color: #f8f8f2">(i,j);</span>
+<span style="color: #f8f8f2">h</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">sum</span> <span style="color: #f8f8f2">(f,g);</span>
+<span style="color: #75715e">//------------------------------------------------------------------------------</span>
+<span style="color: #75715e">// Name visibility</span>
+<span style="color: #75715e">// An entity declared outside any block has global scope, meaning that its name is valid anywhere in the code. While an entity declared within a block, such as a function or a selective statement, has block scope, and is only visible within the specific block in which it is declared, but not outside it.</span>
+<span style="color: #75715e">// Variables with block scope are known as local variables.</span>
+
+<span style="color: #75715e">// Namespaces</span>
+<span style="color: #66d9ef">namespace</span> <span style="color: #f8f8f2">myNamespace</span>
+<span style="color: #f8f8f2">{</span>
+	<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">a,</span> <span style="color: #f8f8f2">b;</span>
+<span style="color: #f8f8f2">}</span>
+<span style="color: #75715e">// to access the previous variables from outside myNamespace</span>
+<span style="color: #f8f8f2">myNamespace</span><span style="color: #f92672">::</span><span style="color: #f8f8f2">a</span>
+<span style="color: #f8f8f2">myNamespace</span><span style="color: #f92672">::</span><span style="color: #f8f8f2">b</span>
+<span style="color: #75715e">// Namespaces can be split: a and c are in namespace foo, while b is in namespace bar</span>
+<span style="color: #66d9ef">namespace</span> <span style="color: #f8f8f2">foo</span> <span style="color: #f8f8f2">{</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">a;</span> <span style="color: #f8f8f2">}</span>
+<span style="color: #66d9ef">namespace</span> <span style="color: #f8f8f2">bar</span> <span style="color: #f8f8f2">{</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">b;</span> <span style="color: #f8f8f2">}</span>
+<span style="color: #66d9ef">namespace</span> <span style="color: #f8f8f2">foo</span> <span style="color: #f8f8f2">{</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">c;</span> <span style="color: #f8f8f2">}</span>
+
+<span style="color: #75715e">// using</span>
+<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">main()</span> <span style="color: #f8f8f2">{</span>
+	<span style="color: #f8f8f2">{</span>
+		<span style="color: #66d9ef">using</span> <span style="color: #66d9ef">namespace</span> <span style="color: #f8f8f2">first;</span>
+		<span style="color: #f8f8f2">cout</span> <span style="color: #f92672">&lt;&lt;</span> <span style="color: #f8f8f2">x</span> <span style="color: #f92672">&lt;&lt;</span> <span style="color: #e6db74">&#39;\n&#39;</span><span style="color: #f8f8f2">;</span>
+	<span style="color: #f8f8f2">}</span>
+	<span style="color: #f8f8f2">{</span>
+		<span style="color: #66d9ef">using</span> <span style="color: #66d9ef">namespace</span> <span style="color: #f8f8f2">second;</span>
+		<span style="color: #f8f8f2">cout</span> <span style="color: #f92672">&lt;&lt;</span> <span style="color: #f8f8f2">x</span> <span style="color: #f92672">&lt;&lt;</span> <span style="color: #e6db74">&#39;\n&#39;</span><span style="color: #f8f8f2">;</span>
+	<span style="color: #f8f8f2">}</span>
+	<span style="color: #66d9ef">return</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">}</span>
+
+<span style="color: #75715e">// The std namespace</span>
+<span style="color: #66d9ef">using</span> <span style="color: #66d9ef">namespace</span> <span style="color: #f8f8f2">std;</span>
+<span style="color: #f8f8f2">cout</span> <span style="color: #f92672">&lt;&lt;</span> <span style="color: #e6db74">&quot;Hello world!&quot;</span><span style="color: #f8f8f2">;</span>
+
+<span style="color: #f8f8f2">std</span><span style="color: #f92672">::</span><span style="color: #f8f8f2">cout</span> <span style="color: #f92672">&lt;&lt;</span> <span style="color: #e6db74">&quot;Hello world!&quot;</span><span style="color: #f8f8f2">;</span>
+<span style="color: #75715e">// Whether the elements in the std namespace are introduced with using declarations or are fully qualified on every use does not change the behavior or efficiency of the resulting program in any way. It is mostly a matter of style preference, although for projects mixing libraries, explicit qualification tends to be preferred.</span>
+
+<span style="color: #75715e">// Storage classes</span>
+<span style="color: #75715e">// The storage for variables with global or namespace scope is allocated for the entire duration of the program. This is known as static storage, and it contrasts with the storage for local variables (those declared within a block). These use what is known as automatic storage. </span>
+<span style="color: #75715e">// - Variables with static storage (such as global variables) that are not explicitly initialized are automatically initialized to zeroes.</span>
+<span style="color: #75715e">// - Variables with automatic storage(such as local variables) that are not explicitly initialized are left uninitialized, and thus have an undetermined value.</span>
+
+<span style="color: #75715e">//------------------------------------------------------------------------------</span>
+<span style="color: #75715e">// Pointers</span>
+<span style="color: #f92672">&amp;</span> <span style="color: #75715e">// Address-of operator</span>
+<span style="color: #f92672">*</span> <span style="color: #75715e">// Dereference operator</span>
+
+<span style="color: #75715e">// Declaring pointers</span>
+<span style="color: #66d9ef">int</span> <span style="color: #f92672">*</span> <span style="color: #f8f8f2">number;</span>
+<span style="color: #75715e">// Note that the asterisk (*) used when declaring a pointer only means that it is a pointer (it is part of its type compound specifier), and should not be confused with the dereference operator </span>
+<span style="color: #75715e">// They are simply two different things represented with the same sign.</span>
+
+<span style="color: #75715e">// for declaring 2 pointers, use </span>
+<span style="color: #66d9ef">int</span> <span style="color: #f92672">*</span> <span style="color: #f8f8f2">p1,</span> <span style="color: #f92672">*</span> <span style="color: #f8f8f2">p2;</span>
+<span style="color: #75715e">// not </span>
+<span style="color: #66d9ef">int</span> <span style="color: #f92672">*</span> <span style="color: #f8f8f2">p1,</span> <span style="color: #f8f8f2">p2;</span>
+<span style="color: #75715e">// p2 would be of type int.</span>
+
+<span style="color: #75715e">// Pointers and arrays</span>
+<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">myarray</span> <span style="color: #f8f8f2">[</span><span style="color: #ae81ff">20</span><span style="color: #f8f8f2">];</span>
+<span style="color: #66d9ef">int</span> <span style="color: #f92672">*</span> <span style="color: #f8f8f2">mypointer;</span>
+<span style="color: #f8f8f2">mypointer</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">myarray;</span> <span style="color: #75715e">// valid</span>
+<span style="color: #f8f8f2">myarray</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">mypointer;</span> <span style="color: #75715e">// not valid</span>
+<span style="color: #f8f8f2">After</span> <span style="color: #f8f8f2">that,</span> <span style="color: #f8f8f2">mypointer</span> <span style="color: #f8f8f2">and</span> <span style="color: #f8f8f2">myarray</span> <span style="color: #f8f8f2">would</span> <span style="color: #f8f8f2">be</span> <span style="color: #f8f8f2">equivalent</span> <span style="color: #f8f8f2">and</span> <span style="color: #f8f8f2">would</span> <span style="color: #f8f8f2">have</span> <span style="color: #f8f8f2">very</span> <span style="color: #f8f8f2">similar</span> <span style="color: #f8f8f2">properties.</span> <span style="color: #f8f8f2">The</span> <span style="color: #f8f8f2">main</span> <span style="color: #f8f8f2">difference</span> <span style="color: #f8f8f2">being</span> <span style="color: #f8f8f2">that</span> <span style="color: #f8f8f2">mypointer</span> <span style="color: #f8f8f2">can</span> <span style="color: #f8f8f2">be</span> <span style="color: #f8f8f2">assigned</span> <span style="color: #f8f8f2">a</span> <span style="color: #f8f8f2">different</span> <span style="color: #f8f8f2">address,</span> <span style="color: #f8f8f2">whereas</span> <span style="color: #f8f8f2">myarray</span> <span style="color: #f8f8f2">can</span> <span style="color: #f8f8f2">never</span> <span style="color: #f8f8f2">be</span> <span style="color: #f8f8f2">assigned</span> <span style="color: #f8f8f2">anything,</span> <span style="color: #f8f8f2">and</span> <span style="color: #f8f8f2">will</span> <span style="color: #f8f8f2">always</span> <span style="color: #f8f8f2">represent</span> <span style="color: #f8f8f2">the</span> <span style="color: #f8f8f2">same</span> <span style="color: #f8f8f2">block</span> <span style="color: #f8f8f2">of</span> <span style="color: #ae81ff">20</span> <span style="color: #f8f8f2">elements</span> <span style="color: #f8f8f2">of</span> <span style="color: #f8f8f2">type</span> <span style="color: #66d9ef">int</span><span style="color: #f8f8f2">.</span>
+
+<span style="color: #f8f8f2">[]</span> <span style="color: #75715e">// offset operator: in fact these brackets are a dereferencing operator known as offset operator. They dereference the variable they follow just as * does, but they also add the number between brackets to the address being dereferenced.</span>
+<span style="color: #f8f8f2">a[</span><span style="color: #ae81ff">5</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>       <span style="color: #75715e">// a [offset of 5] = 0</span>
+<span style="color: #f92672">*</span><span style="color: #f8f8f2">(a</span><span style="color: #f92672">+</span><span style="color: #ae81ff">5</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>     <span style="color: #75715e">// pointed to by (a+5) = 0 </span>
+<span style="color: #75715e">// These two expressions are equivalent and valid</span>
+
+<span style="color: #75715e">// Pointer arithmetics</span>
+<span style="color: #75715e">// only addition and subtraction operations are allowed</span>
+<span style="color: #75715e">// When fundamental data types were introduced, each addition/subtraction is based on multiples of the length of the fundamental data types</span>
+<span style="color: #f92672">*</span><span style="color: #f8f8f2">p</span><span style="color: #f92672">++</span>
+<span style="color: #75715e">// is equivalent to</span>
+<span style="color: #f92672">*</span><span style="color: #f8f8f2">(p</span><span style="color: #f92672">++</span><span style="color: #f8f8f2">)</span>
+<span style="color: #75715e">// ++ has a higher precedence than *</span>
+
+<span style="color: #75715e">// Pointers and const</span>
+<span style="color: #66d9ef">const</span> <span style="color: #66d9ef">int</span> <span style="color: #f92672">*</span> <span style="color: #f8f8f2">p</span> <span style="color: #f92672">=</span> <span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">y;</span>
+<span style="color: #75715e">// it can read the value pointed, but it cannot modify it</span>
+<span style="color: #75715e">// One of the use cases of pointers to const elements is as function parameters: a function that takes a pointer to non-const as parameter can modify the value passed as argument, while a function that takes a pointer to const as parameter cannot.</span>
+<span style="color: #66d9ef">void</span> <span style="color: #f8f8f2">increment_all</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span><span style="color: #f92672">*</span> <span style="color: #f8f8f2">start,</span> <span style="color: #66d9ef">int</span><span style="color: #f92672">*</span> <span style="color: #f8f8f2">stop)</span>
+<span style="color: #66d9ef">void</span> <span style="color: #f8f8f2">print_all</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">const</span> <span style="color: #66d9ef">int</span><span style="color: #f92672">*</span> <span style="color: #f8f8f2">start,</span> <span style="color: #66d9ef">const</span> <span style="color: #66d9ef">int</span><span style="color: #f92672">*</span> <span style="color: #f8f8f2">stop)</span>
+<span style="color: #75715e">// These pointers point to constant content they cannot modify, but they are not constant themselves: i.e., the pointers can still be incremented or assigned different addresses, although they cannot modify the content they point to.</span>
+<span style="color: #75715e">// And this is where a second dimension to constness is added to pointers: Pointers can also be themselves const. And this is specified by appending const to the pointed type (after the asterisk):</span>
+<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">x;</span>
+      <span style="color: #66d9ef">int</span> <span style="color: #f92672">*</span>       <span style="color: #f8f8f2">p1</span> <span style="color: #f92672">=</span> <span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">x;</span>  <span style="color: #75715e">// non-const pointer to non-const int</span>
+<span style="color: #66d9ef">const</span> <span style="color: #66d9ef">int</span> <span style="color: #f92672">*</span>       <span style="color: #f8f8f2">p2</span> <span style="color: #f92672">=</span> <span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">x;</span>  <span style="color: #75715e">// non-const pointer to const int</span>
+      <span style="color: #66d9ef">int</span> <span style="color: #f92672">*</span> <span style="color: #66d9ef">const</span> <span style="color: #f8f8f2">p3</span> <span style="color: #f92672">=</span> <span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">x;</span>  <span style="color: #75715e">// const pointer to non-const int</span>
+<span style="color: #66d9ef">const</span> <span style="color: #66d9ef">int</span> <span style="color: #f92672">*</span> <span style="color: #66d9ef">const</span> <span style="color: #f8f8f2">p4</span> <span style="color: #f92672">=</span> <span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">x;</span>  <span style="color: #75715e">// const pointer to const int</span>
+
+<span style="color: #66d9ef">const</span> <span style="color: #66d9ef">int</span> <span style="color: #f92672">*</span> <span style="color: #f8f8f2">p2a</span> <span style="color: #f92672">=</span> <span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">x;</span>  <span style="color: #75715e">//      non-const pointer to const int</span>
+<span style="color: #66d9ef">int</span> <span style="color: #66d9ef">const</span> <span style="color: #f92672">*</span> <span style="color: #f8f8f2">p2b</span> <span style="color: #f92672">=</span> <span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">x;</span>  <span style="color: #75715e">// also non-const pointer to const int</span>
+
+<span style="color: #75715e">// Pointers and string literals</span>
+
+<span style="color: #75715e">// Pointers to pointers</span>
+<span style="color: #66d9ef">char</span> <span style="color: #f8f8f2">a;</span>
+<span style="color: #66d9ef">char</span> <span style="color: #f92672">*</span> <span style="color: #f8f8f2">b;</span>
+<span style="color: #66d9ef">char</span> <span style="color: #f92672">**</span> <span style="color: #f8f8f2">c;</span>
+<span style="color: #f8f8f2">a</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&#39;z&#39;</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">b</span> <span style="color: #f92672">=</span> <span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">a;</span>
+<span style="color: #f8f8f2">c</span> <span style="color: #f92672">=</span> <span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">b;</span>
+
+<span style="color: #75715e">// void pointers</span>
+<span style="color: #75715e">// void represents the absence of type</span>
+<span style="color: #75715e">// This gives void pointers a great flexibility, by being able to point to any data type. In exchange, they have a great limitation: the data pointed to by them cannot be directly dereferenced.</span>
+<span style="color: #75715e">// One of its possible uses may be to pass generic parameters to a function.</span>
+<span style="color: #66d9ef">void</span> <span style="color: #a6e22e">increase</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">void</span><span style="color: #f92672">*</span> <span style="color: #f8f8f2">data,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">psize)</span>
+<span style="color: #f8f8f2">{</span>
+  <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(</span> <span style="color: #f8f8f2">psize</span> <span style="color: #f92672">==</span> <span style="color: #66d9ef">sizeof</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">char</span><span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">)</span>
+  <span style="color: #f8f8f2">{</span> <span style="color: #66d9ef">char</span><span style="color: #f92672">*</span> <span style="color: #f8f8f2">pchar;</span> <span style="color: #f8f8f2">pchar</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">char</span><span style="color: #f92672">*</span><span style="color: #f8f8f2">)data;</span> <span style="color: #f92672">++</span><span style="color: #f8f8f2">(</span><span style="color: #f92672">*</span><span style="color: #f8f8f2">pchar);</span> <span style="color: #f8f8f2">}</span>
+  <span style="color: #66d9ef">else</span> <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(psize</span> <span style="color: #f92672">==</span> <span style="color: #66d9ef">sizeof</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span><span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">)</span>
+  <span style="color: #f8f8f2">{</span> <span style="color: #66d9ef">int</span><span style="color: #f92672">*</span> <span style="color: #f8f8f2">pint;</span> <span style="color: #f8f8f2">pint</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span><span style="color: #f92672">*</span><span style="color: #f8f8f2">)data;</span> <span style="color: #f92672">++</span><span style="color: #f8f8f2">(</span><span style="color: #f92672">*</span><span style="color: #f8f8f2">pint);</span> <span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">}</span>
+
+<span style="color: #75715e">// Invalid pointers and null pointers</span>
+<span style="color: #75715e">// pointers can actually point to any address, including addresses that do not refer to any valid element. Typical examples of this are uninitialized pointers and pointers to nonexistent elements of an array</span>
+<span style="color: #75715e">// null pointer value: 0 or nullptr</span>
+<span style="color: #66d9ef">int</span> <span style="color: #f92672">*</span> <span style="color: #f8f8f2">p</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
+<span style="color: #66d9ef">int</span> <span style="color: #f92672">*</span> <span style="color: #f8f8f2">q</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">nullptr;</span>
+<span style="color: #75715e">// they both actually compare equal</span>
+
+<span style="color: #66d9ef">int</span> <span style="color: #f92672">*</span> <span style="color: #f8f8f2">r</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">NULL;</span>
+<span style="color: #75715e">// NULL is defined in several headers of the standard library, and is defined as an alias of some null pointer constant value (such as 0 or nullptr).</span>
+<span style="color: #75715e">// Do not confuse null pointers with void pointers! A null pointer is a value that any pointer can take to represent that it is pointing to &quot;nowhere&quot;, while a void pointer is a type of pointer that can point to somewhere without a specific type. </span>
+
+<span style="color: #75715e">// Pointers to functions</span>
+<span style="color: #75715e">// The typical use of this is for passing a function as an argument to another function.</span>
+
+<span style="color: #75715e">// pointer to functions</span>
+<span style="color: #75715e">#include &lt;iostream&gt;</span>
+<span style="color: #66d9ef">using</span> <span style="color: #66d9ef">namespace</span> <span style="color: #f8f8f2">std;</span>
+
+<span style="color: #66d9ef">int</span> <span style="color: #a6e22e">addition</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">a,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">b)</span>
+<span style="color: #f8f8f2">{</span> <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">(a</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">b);</span> <span style="color: #f8f8f2">}</span>
+
+<span style="color: #66d9ef">int</span> <span style="color: #a6e22e">subtraction</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">a,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">b)</span>
+<span style="color: #f8f8f2">{</span> <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">(a</span><span style="color: #f92672">-</span><span style="color: #f8f8f2">b);</span> <span style="color: #f8f8f2">}</span>
+
+<span style="color: #66d9ef">int</span> <span style="color: #a6e22e">operation</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">x,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">y,</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">(</span><span style="color: #f92672">*</span><span style="color: #f8f8f2">functocall)(</span><span style="color: #66d9ef">int</span><span style="color: #f8f8f2">,</span><span style="color: #66d9ef">int</span><span style="color: #f8f8f2">))</span>
+<span style="color: #f8f8f2">{</span>
+  <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">g;</span>
+  <span style="color: #f8f8f2">g</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">(</span><span style="color: #f92672">*</span><span style="color: #f8f8f2">functocall)(x,y);</span>
+  <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">(g);</span>
+<span style="color: #f8f8f2">}</span>
+
+<span style="color: #66d9ef">int</span> <span style="color: #a6e22e">main</span> <span style="color: #f8f8f2">()</span>
+<span style="color: #f8f8f2">{</span>
+  <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">m,n;</span>
+  <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">(</span><span style="color: #f92672">*</span><span style="color: #f8f8f2">minus)(</span><span style="color: #66d9ef">int</span><span style="color: #f8f8f2">,</span><span style="color: #66d9ef">int</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">subtraction;</span>	<span style="color: #75715e">// minus is a pointer to a function that has two parameters of type int</span>
+
+  <span style="color: #f8f8f2">m</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">operation</span> <span style="color: #f8f8f2">(</span><span style="color: #ae81ff">7</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">5</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">addition);</span>
+  <span style="color: #f8f8f2">n</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">operation</span> <span style="color: #f8f8f2">(</span><span style="color: #ae81ff">20</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">m,</span> <span style="color: #f8f8f2">minus);</span>
+  <span style="color: #f8f8f2">cout</span> <span style="color: #f92672">&lt;&lt;</span><span style="color: #f8f8f2">n;</span>
+  <span style="color: #66d9ef">return</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
+
+<span style="color: #75715e">//------------------------------------------------------------------------------</span>
+<span style="color: #75715e">// Dynamic memory</span>
+
+<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">n</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">10</span><span style="color: #f8f8f2">;</span>
+<span style="color: #66d9ef">double</span><span style="color: #f92672">*</span> <span style="color: #f8f8f2">b</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #66d9ef">double</span><span style="color: #f8f8f2">[n];</span>
+
+<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">n;</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">++</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">{</span>
+	<span style="color: #f8f8f2">b[i]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">i;</span>
+	<span style="color: #f8f8f2">cout</span> <span style="color: #f92672">&lt;&lt;</span> <span style="color: #f8f8f2">b[i]</span> <span style="color: #f92672">&lt;&lt;</span> <span style="color: #f8f8f2">endl;</span>
+<span style="color: #f8f8f2">}</span>
+
+<span style="color: #66d9ef">delete</span><span style="color: #f8f8f2">[]</span> <span style="color: #f8f8f2">b;</span>
+<span style="color: #75715e">// For new use delete.</span>
+<span style="color: #75715e">// For new[] use delete[].</span>
+
+<span style="color: #75715e">// dynamic array of arrays</span>
+<span style="color: #75715e">// method 1: array of pointers</span>
+	<span style="color: #66d9ef">double</span><span style="color: #f92672">**</span> <span style="color: #f8f8f2">ptr</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #66d9ef">double</span><span style="color: #f92672">*</span><span style="color: #f8f8f2">[num_of_row_];</span>
+	<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">num_of_row_;</span> <span style="color: #f92672">++</span><span style="color: #f8f8f2">i)</span> <span style="color: #f8f8f2">{</span>
+		<span style="color: #f8f8f2">ptr[i]</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #66d9ef">double</span><span style="color: #f8f8f2">[num_of_col_];</span>
+	<span style="color: #f8f8f2">}</span>
+
+<span style="color: #75715e">// method 2: single array with indexing</span>
+<span style="color: #75715e">//------------------------------------------------------------------------------</span>
+<span style="color: #75715e">// file——IO</span>
+<span style="color: #75715e">#include &lt;fstream&gt;</span>
+
+<span style="color: #f8f8f2">ifstream</span> <span style="color: #f8f8f2">myfile;</span>    <span style="color: #75715e">//enable reading</span>
+<span style="color: #f8f8f2">ofstream</span> <span style="color: #f8f8f2">myfile;</span>    <span style="color: #75715e">//enable writing or creating the file</span>
+
+<span style="color: #f8f8f2">myfile.open(</span><span style="color: #e6db74">&quot;newfile.txt&quot;</span><span style="color: #f8f8f2">);</span> <span style="color: #75715e">// if it does not exist, create it</span>
+<span style="color: #75715e">// or</span>
+<span style="color: #f8f8f2">ofstream</span> <span style="color: #f8f8f2">my_file(</span><span style="color: #e6db74">&quot;newfile.txt&quot;</span><span style="color: #f8f8f2">)</span>
+
+<span style="color: #f8f8f2">myfile</span> <span style="color: #f92672">&lt;&lt;</span> <span style="color: #e6db74">&quot;new line </span><span style="color: #ae81ff">\n</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">;</span>
+
+<span style="color: #66d9ef">while</span><span style="color: #f8f8f2">(myfile.good());</span>   <span style="color: #75715e">//as long as it is not the last line</span>
+
+<span style="color: #75715e">//------------------------------------------------------------------------------</span>
+<span style="color: #75715e">// Type conversions</span>
+<span style="color: #75715e">// Implicit conversion</span>
+<span style="color: #66d9ef">short</span> <span style="color: #f8f8f2">a</span><span style="color: #f92672">=</span><span style="color: #ae81ff">2000</span><span style="color: #f8f8f2">;</span>
+<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">b;</span>
+<span style="color: #f8f8f2">b</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">a;</span>
+<span style="color: #75715e">// If a negative integer value is converted to an unsigned type, the resulting value corresponds to its 2&#39;s complement bitwise representation (i.e., -1 becomes the largest value representable by the type, -2 the second largest, ...).</span>
+<span style="color: #75715e">// The conversions from/to bool consider false equivalent to zero (for numeric types) and to null pointer (for pointer types); true is equivalent to all other values and is converted to the equivalent of 1.</span>
+<span style="color: #75715e">// If the conversion is from a floating-point type to an integer type, the value is truncated (the decimal part is removed). If the result lies outside the range of representable values by the type, the conversion causes undefined behavior.</span>
+
+<span style="color: #75715e">// Type casting</span>
+<span style="color: #75715e">// There exist two main syntaxes for generic type-casting: functional and c-like:</span>
+<span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">x</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">10.3</span><span style="color: #f8f8f2">;</span>
+<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">y;</span>
+<span style="color: #f8f8f2">y</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">(x);</span>    <span style="color: #75715e">// functional notation</span>
+<span style="color: #f8f8f2">y</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">int</span><span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">x;</span>    <span style="color: #75715e">// c-like cast notation </span>
+
+<span style="color: #75715e">// Unrestricted explicit type-casting allows to convert any pointer into any other pointer type, independently of the types they point to. The subsequent call to member result will produce either a run-time error or some other unexpected results.</span>
+<span style="color: #f8f8f2">TypeB</span> <span style="color: #f8f8f2">b;</span>
+<span style="color: #f8f8f2">TypeA</span> <span style="color: #f92672">*</span> <span style="color: #f8f8f2">pA;</span>
+<span style="color: #f8f8f2">pA</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">(TypeA</span><span style="color: #f92672">*</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">b;</span>
+<span style="color: #75715e">// In order to control these types of conversions between classes, we have four specific casting operators: </span>
+<span style="color: #66d9ef">dynamic_cast</span><span style="color: #f92672">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+<span style="color: #66d9ef">reinterpret_cast</span><span style="color: #f92672">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+<span style="color: #66d9ef">static_cast</span><span style="color: #f92672">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+<span style="color: #66d9ef">const_cast</span><span style="color: #f92672">&lt;&gt;</span><span style="color: #f8f8f2">();</span>
+
+<span style="color: #75715e">// typeid (expression)</span>
+<span style="color: #f8f8f2">cout</span> <span style="color: #f92672">&lt;&lt;</span> <span style="color: #e6db74">&quot;a is: &quot;</span> <span style="color: #f92672">&lt;&lt;</span> <span style="color: #66d9ef">typeid</span><span style="color: #f8f8f2">(a).name()</span> <span style="color: #f92672">&lt;&lt;</span> <span style="color: #e6db74">&#39;\n&#39;</span><span style="color: #f8f8f2">;</span>
+<span style="color: #75715e">//------------------------------------------------------------------------------</span>
+<span style="color: #75715e">// class</span>
+<span style="color: #75715e">//--------------------------------------</span>
+<span style="color: #66d9ef">private</span><span style="color: #960050; background-color: #1e0010">：</span> <span style="color: #75715e">// members of a class are accessible only from within other members of the same class (or from their &quot;friends&quot;).</span>
+<span style="color: #66d9ef">protected</span><span style="color: #960050; background-color: #1e0010">：</span> <span style="color: #75715e">// members are accessible from other members of the same class (or from their &quot;friends&quot;), but also from members of their derived classes.</span>
+<span style="color: #66d9ef">public</span><span style="color: #960050; background-color: #1e0010">：</span> <span style="color: #75715e">// members are accessible from anywhere where the object is visible.</span>
+<span style="color: #75715e">// private by default</span>
+<span style="color: #75715e">//--------------------------------------</span>
+<span style="color: #75715e">// The only difference between defining a member function completely within the class definition or to just include its declaration in the function and define it later outside the class, is that in the first case the function is automatically considered an inline member function by the compiler, while in the second it is a normal (not-inline) class member function. This causes no differences in behavior, but only on possible compiler optimizations.</span>
+<span style="color: #75715e">//--------------------------------------</span>
+<span style="color: #75715e">// Overloading operators</span>
+<span style="color: #f8f8f2">type</span> <span style="color: #66d9ef">operator</span> <span style="color: #f8f8f2">sign</span> <span style="color: #f8f8f2">(parameters)</span> <span style="color: #f8f8f2">{</span> <span style="color: #75715e">/*... body ...*/</span> <span style="color: #f8f8f2">}</span> 
+
+<span style="color: #f8f8f2">c</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">a</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">b;</span>
+<span style="color: #f8f8f2">c</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">a.</span><span style="color: #66d9ef">operator</span><span style="color: #f92672">+</span> <span style="color: #f8f8f2">(b);</span>
+<span style="color: #75715e">// Both expressions are equivalent.</span>
+
+<span style="color: #75715e">// Notice that some operators may be overloaded in two forms: either as a member function or as a non-member function: The first case has been used in the example above for operator+. But some operators can also be overloaded as non-member functions; In this case, the operator function takes an object of the proper class as first argument.</span>
+<span style="color: #f8f8f2">CVector</span> <span style="color: #66d9ef">operator</span><span style="color: #f92672">+</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">const</span> <span style="color: #f8f8f2">CVector</span><span style="color: #f92672">&amp;</span> <span style="color: #f8f8f2">lhs,</span> <span style="color: #66d9ef">const</span> <span style="color: #f8f8f2">CVector</span><span style="color: #f92672">&amp;</span> <span style="color: #f8f8f2">rhs)</span> 
+<span style="color: #f8f8f2">CVector</span> <span style="color: #f8f8f2">CVector</span><span style="color: #f92672">::</span><span style="color: #66d9ef">operator</span><span style="color: #f92672">+</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">const</span> <span style="color: #f8f8f2">CVector</span><span style="color: #f92672">&amp;</span> <span style="color: #f8f8f2">param)</span>
+<span style="color: #75715e">//--------------------------------------</span>
+<span style="color: #75715e">// Static members</span>
+<span style="color: #75715e">// A class can contain static members, either data or functions.</span>
+<span style="color: #75715e">// static data member</span>
+<span style="color: #75715e">// Also known as a &quot;class variable&quot;, because there is only one common variable for all the objects of that same class, sharing the same value: i.e., its value is not different from one object of this class to another.</span>
+<span style="color: #75715e">// In fact, static members have the same properties as non-member variables but they enjoy class scope.</span>
+<span style="color: #75715e">// To avoid them to be declared several times, they cannot be initialized directly in the class, but need to be initialized somewhere outside it.</span>
+<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">MyClass</span><span style="color: #f92672">::</span><span style="color: #f8f8f2">n</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
+
+<span style="color: #75715e">// static member functions</span>
+<span style="color: #75715e">// members of a class that are common to all object of that class, acting exactly as non-member functions but being accessed like members of the class. </span>
+<span style="color: #75715e">// Because they are like non-member functions, they cannot access non-static members of the class</span>
+<span style="color: #75715e">// They neither can use the keyword this.</span>
+<span style="color: #75715e">//--------------------------------------</span>
+<span style="color: #75715e">// Const member functions</span>
+<span style="color: #75715e">// The access to its data members from outside the class is restricted to read-only, as if all its data members were const for those accessing them from outside the class.</span>
+<span style="color: #75715e">// The member functions of a const object can only be called if they are themselves specified as const members.</span>
+<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">get()</span> <span style="color: #66d9ef">const</span> <span style="color: #f8f8f2">{</span><span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">x;}</span>
+
+<span style="color: #75715e">// Note that const can be used to qualify the type returned by a member function. This const is not the same as the one which specifies a member as const. Both are independent and are located at different places in the function prototype:</span>
+<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">get()</span> <span style="color: #66d9ef">const</span> <span style="color: #f8f8f2">{</span><span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">x;}</span>        <span style="color: #75715e">// const member function</span>
+<span style="color: #66d9ef">const</span> <span style="color: #66d9ef">int</span><span style="color: #f92672">&amp;</span> <span style="color: #f8f8f2">get()</span> <span style="color: #f8f8f2">{</span><span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">x;}</span>       <span style="color: #75715e">// member function returning a const&amp;</span>
+<span style="color: #66d9ef">const</span> <span style="color: #66d9ef">int</span><span style="color: #f92672">&amp;</span> <span style="color: #f8f8f2">get()</span> <span style="color: #66d9ef">const</span> <span style="color: #f8f8f2">{</span><span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">x;}</span> <span style="color: #75715e">// const member function returning a const&amp;</span>
+
+<span style="color: #75715e">// Member functions specified to be const cannot modify non-static data members nor call other non-const member functions.</span>
+<span style="color: #75715e">// In essence, const members shall not modify the state of an object.</span>
+
+<span style="color: #75715e">// You may think that anyway you are seldom going to declare const objects, and thus marking all members that don&#39;t modify the object as const is not worth the effort, but const objects are actually very common.</span>
+<span style="color: #75715e">// Most functions taking classes as parameters actually take them by const reference, and thus, these functions can only access their const members:</span>
+
+<span style="color: #75715e">// Member functions can be overloaded on their constness: i.e., a class may have two member functions with identical signatures except that one is const and the other is not: in this case, the const version is called only when the object is itself const, and the non-const version is called when the object is itself non-const.</span>
+<span style="color: #66d9ef">class</span> <span style="color: #a6e22e">MyClass</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">x;</span>
+  <span style="color: #f8f8f2">public:</span>
+    <span style="color: #f8f8f2">MyClass(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">val)</span> <span style="color: #f92672">:</span> <span style="color: #f8f8f2">x(val)</span> <span style="color: #f8f8f2">{}</span>
+    <span style="color: #66d9ef">const</span> <span style="color: #66d9ef">int</span><span style="color: #f92672">&amp;</span> <span style="color: #f8f8f2">get()</span> <span style="color: #66d9ef">const</span> <span style="color: #f8f8f2">{</span><span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">x;}</span>
+    <span style="color: #66d9ef">int</span><span style="color: #f92672">&amp;</span> <span style="color: #f8f8f2">get()</span> <span style="color: #f8f8f2">{</span><span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">x;}</span>
+<span style="color: #f8f8f2">};</span>
+<span style="color: #75715e">//--------------------------------------</span>
+<span style="color: #75715e">// Class templates</span>
+<span style="color: #75715e">// Just like we can create function templates, we can also create class templates, allowing classes to have members that use template parameters as types.</span>
+
+<span style="color: #66d9ef">template</span> <span style="color: #f92672">&lt;</span><span style="color: #66d9ef">class</span> <span style="color: #a6e22e">T</span><span style="color: #f92672">&gt;</span>
+<span style="color: #66d9ef">class</span> <span style="color: #a6e22e">mypair</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #f8f8f2">T</span> <span style="color: #f8f8f2">values</span> <span style="color: #f8f8f2">[</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">];</span>
+  <span style="color: #f8f8f2">public:</span>
+    <span style="color: #f8f8f2">mypair</span> <span style="color: #f8f8f2">(T</span> <span style="color: #f8f8f2">first,</span> <span style="color: #f8f8f2">T</span> <span style="color: #f8f8f2">second)</span>
+    <span style="color: #f8f8f2">{</span>
+      <span style="color: #f8f8f2">values[</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">]</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">first;</span> <span style="color: #f8f8f2">values[</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">]</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">second;</span>
+    <span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">};</span>
+
+<span style="color: #f8f8f2">mypair</span><span style="color: #f92672">&lt;</span><span style="color: #66d9ef">int</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">myobject</span> <span style="color: #f8f8f2">(</span><span style="color: #ae81ff">115</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">36</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">mypair</span><span style="color: #f92672">&lt;</span><span style="color: #66d9ef">double</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">myfloats</span> <span style="color: #f8f8f2">(</span><span style="color: #ae81ff">3.0</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">2.18</span><span style="color: #f8f8f2">);</span> 
+
+<span style="color: #75715e">// The constructor is the only member function in the previous class template and it has been defined inline within the class definition itself. In case that a member function is defined outside the defintion of the class template, it shall be preceded with the template &lt;...&gt; prefix:</span>
+<span style="color: #66d9ef">template</span> <span style="color: #f92672">&lt;</span><span style="color: #66d9ef">class</span> <span style="color: #a6e22e">T</span><span style="color: #f92672">&gt;</span>
+<span style="color: #66d9ef">class</span> <span style="color: #a6e22e">mypair</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #f8f8f2">T</span> <span style="color: #f8f8f2">a,</span> <span style="color: #f8f8f2">b;</span>
+  <span style="color: #f8f8f2">public:</span>
+    <span style="color: #f8f8f2">mypair</span> <span style="color: #f8f8f2">(T</span> <span style="color: #f8f8f2">first,</span> <span style="color: #f8f8f2">T</span> <span style="color: #f8f8f2">second)</span>
+      <span style="color: #f8f8f2">{a</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">first;</span> <span style="color: #f8f8f2">b</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">second;}</span>
+    <span style="color: #f8f8f2">T</span> <span style="color: #f8f8f2">getmax</span> <span style="color: #f8f8f2">();</span>
+<span style="color: #f8f8f2">};</span>
+
+<span style="color: #66d9ef">template</span> <span style="color: #f92672">&lt;</span><span style="color: #66d9ef">class</span> <span style="color: #a6e22e">T</span><span style="color: #f92672">&gt;</span>
+<span style="color: #f8f8f2">T</span> <span style="color: #f8f8f2">mypair</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">T</span><span style="color: #f92672">&gt;::</span><span style="color: #f8f8f2">getmax</span> <span style="color: #f8f8f2">()</span>
+<span style="color: #f8f8f2">{</span>
+  <span style="color: #f8f8f2">T</span> <span style="color: #f8f8f2">retval;</span>
+  <span style="color: #f8f8f2">retval</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">a</span><span style="color: #f92672">&gt;</span><span style="color: #f8f8f2">b</span><span style="color: #f92672">?</span> <span style="color: #f8f8f2">a</span> <span style="color: #f92672">:</span> <span style="color: #f8f8f2">b;</span>
+  <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">retval;</span>
+<span style="color: #f8f8f2">}</span>
+<span style="color: #75715e">// There are three T&#39;s in this declaration: The first one is the template parameter. The second T refers to the type returned by the function. And the third T (the one between angle brackets) is also a requirement: It specifies that this function&#39;s template parameter is also the class template parameter.</span>
+<span style="color: #75715e">//--------------------------------------</span>
+<span style="color: #75715e">// Template specialization</span>
+
+<span style="color: #75715e">// It is possible to define a different implementation for a template when a specific type is passed as template argument. This is called a template specialization.</span>
+
+<span style="color: #75715e">// class template:</span>
+<span style="color: #66d9ef">template</span> <span style="color: #f92672">&lt;</span><span style="color: #66d9ef">class</span> <span style="color: #a6e22e">T</span><span style="color: #f92672">&gt;</span>
+<span style="color: #66d9ef">class</span> <span style="color: #a6e22e">mycontainer</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #f8f8f2">T</span> <span style="color: #f8f8f2">element;</span>
+  <span style="color: #f8f8f2">public:</span>
+    <span style="color: #f8f8f2">mycontainer</span> <span style="color: #f8f8f2">(T</span> <span style="color: #f8f8f2">arg)</span> <span style="color: #f8f8f2">{element</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">arg;}</span>
+    <span style="color: #f8f8f2">T</span> <span style="color: #f8f8f2">increase</span> <span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span><span style="color: #66d9ef">return</span> <span style="color: #f92672">++</span><span style="color: #f8f8f2">element;}</span>
+<span style="color: #f8f8f2">};</span>
+
+<span style="color: #75715e">// class template specialization:</span>
+<span style="color: #66d9ef">template</span> <span style="color: #f92672">&lt;&gt;</span>
+<span style="color: #66d9ef">class</span> <span style="color: #a6e22e">mycontainer</span> <span style="color: #f92672">&lt;</span><span style="color: #66d9ef">char</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #66d9ef">char</span> <span style="color: #f8f8f2">element;</span>
+  <span style="color: #f8f8f2">public:</span>
+    <span style="color: #f8f8f2">mycontainer</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">char</span> <span style="color: #f8f8f2">arg)</span> <span style="color: #f8f8f2">{element</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">arg;}</span>
+    <span style="color: #66d9ef">char</span> <span style="color: #f8f8f2">uppercase</span> <span style="color: #f8f8f2">()</span>
+    <span style="color: #f8f8f2">{</span>
+      <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">((element</span><span style="color: #f92672">&gt;=</span><span style="color: #e6db74">&#39;a&#39;</span><span style="color: #f8f8f2">)</span><span style="color: #f92672">&amp;&amp;</span><span style="color: #f8f8f2">(element</span><span style="color: #f92672">&lt;=</span><span style="color: #e6db74">&#39;z&#39;</span><span style="color: #f8f8f2">))</span>
+      <span style="color: #f8f8f2">element</span><span style="color: #f92672">+=</span><span style="color: #e6db74">&#39;A&#39;</span><span style="color: #f92672">-</span><span style="color: #e6db74">&#39;a&#39;</span><span style="color: #f8f8f2">;</span>
+      <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">element;</span>
+    <span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">};</span>
+
+<span style="color: #75715e">// syntax</span>
+<span style="color: #66d9ef">template</span> <span style="color: #f92672">&lt;&gt;</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">mycontainer</span> <span style="color: #f92672">&lt;</span><span style="color: #66d9ef">char</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">{</span> <span style="color: #f8f8f2">...</span> <span style="color: #f8f8f2">};</span>
+<span style="color: #75715e">// </span>
+<span style="color: #66d9ef">template</span> <span style="color: #f92672">&lt;</span><span style="color: #66d9ef">class</span> <span style="color: #a6e22e">T</span><span style="color: #f92672">&gt;</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">mycontainer</span> <span style="color: #f8f8f2">{</span> <span style="color: #f8f8f2">...</span> <span style="color: #f8f8f2">};</span>
+<span style="color: #66d9ef">template</span> <span style="color: #f92672">&lt;&gt;</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">mycontainer</span> <span style="color: #f92672">&lt;</span><span style="color: #66d9ef">char</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">{</span> <span style="color: #f8f8f2">...</span> <span style="color: #f8f8f2">};</span>
+<span style="color: #75715e">// The first line is the generic template, and the second one is the specialization.</span>
+
+<span style="color: #75715e">//--------------------------------------</span>
+<span style="color: #75715e">// 6 special member functions</span>
+<span style="color: #f8f8f2">Default</span> <span style="color: #f8f8f2">constructor</span>	<span style="color: #f8f8f2">C</span><span style="color: #f92672">::</span><span style="color: #f8f8f2">C();</span>
+<span style="color: #f8f8f2">Destructor</span>			<span style="color: #f8f8f2">C</span><span style="color: #f92672">::~</span><span style="color: #f8f8f2">C();</span>
+<span style="color: #f8f8f2">Copy</span> <span style="color: #f8f8f2">constructor</span>	<span style="color: #f8f8f2">C</span><span style="color: #f92672">::</span><span style="color: #f8f8f2">C</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">const</span> <span style="color: #f8f8f2">C</span><span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">Copy</span> <span style="color: #f8f8f2">assignment</span>		<span style="color: #f8f8f2">C</span><span style="color: #f92672">&amp;</span> <span style="color: #66d9ef">operator</span><span style="color: #f92672">=</span> <span style="color: #f8f8f2">(</span><span style="color: #66d9ef">const</span> <span style="color: #f8f8f2">C</span><span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">Move</span> <span style="color: #f8f8f2">constructor</span>	<span style="color: #f8f8f2">C</span><span style="color: #f92672">::</span><span style="color: #f8f8f2">C</span> <span style="color: #f8f8f2">(C</span><span style="color: #f92672">&amp;&amp;</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">Move</span> <span style="color: #f8f8f2">assignment</span>		<span style="color: #f8f8f2">C</span><span style="color: #f92672">&amp;</span> <span style="color: #66d9ef">operator</span><span style="color: #f92672">=</span> <span style="color: #f8f8f2">(C</span><span style="color: #f92672">&amp;&amp;</span><span style="color: #f8f8f2">);</span>
+
+<span style="color: #75715e">/*</span>
+<span style="color: #75715e">//------------------------------------------------------------------------------</span>
+<span style="color: #75715e">Polymorphism is the ability of a class instance to behave as if it were an instance of another class in its inheritance tree, most often one of its ancestor classes.</span>
+<span style="color: #75715e">An override is a type of function which occurs in a class which inherits from another class. An override function &quot;replaces&quot; a function inherited from the base class, but does so in such a way that it is called even when an instance of its class is pretending to be a different type through polymorphism.</span>
+
+<span style="color: #75715e">Overloading is the action of defining multiple methods with the same name, but with different parameters. It is unrelated to either overriding or polymorphism.</span>
+<span style="color: #75715e">//------------------------------------------------------------------------------</span>
+<span style="color: #75715e">Principles:</span>
+<span style="color: #75715e">1. One class should do one thing.</span>
+<span style="color: #75715e">2. Fucntion should have a length of less than one screen.</span>
+<span style="color: #75715e">3. Always comment.</span>
+<span style="color: #75715e">4. Use CONST and scoping(use bracket and then variables became local)</span>
+<span style="color: #75715e">//------------------------------------------------------------------------------</span>
+<span style="color: #75715e">*/</span>
+</pre></td></tr></table></div>

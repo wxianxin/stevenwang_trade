@@ -25,7 +25,7 @@ SECRET_KEY = '$a#10battkss0pu)s!plir6v&+i5@_-+8hv$6ts*47c@jmo%*0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['stevenwang.trade']
+ALLOWED_HOSTS = ['stevenwang.trade', 'stevenwang.ddns.net']
 
 
 # Application definition
