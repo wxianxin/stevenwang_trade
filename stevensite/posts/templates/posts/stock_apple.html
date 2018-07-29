@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -11,7 +12,7 @@
 
 <body style="width: 960px; background-color: #000000; margin: 0 auto;">
 
-    <center><img src="/stock/pic/apple.jpg" alt=logo.png width=200px"></center>
+    <center><img src="{% static "index_page/stocks/images/apple.png" %}" alt=logo.png style="max-height:100px;"></center>
     <center><a href="https://www.google.com/finance?q=aapl">Apple Inc.</a></center>
     <h1 align="middle" style="color: #ffffff">Apple is now becoming ancient.</h1>
     <p align="right" style="color: #ffffff">20160907</p>

@@ -83,6 +83,12 @@ span.box {
 
         <h2 class="box">Some thoughts</h2>
         <ul style="margin: 0; padding: 0px;">
+        {% if article_list %}
+            {% for article in article_list %}
+            <li><a href="posts/article/{{ article.name_text }}"><h3>{{ article.title_text }}</h3></a></li>
+            {% endfor %}
+        {% endif %}
+
         {% if article_link_list %}
             {% for link in article_link_list %}
             <li><a href={{ link.link_text }}><h3>{{ link.title_text }}</h3></a></li>

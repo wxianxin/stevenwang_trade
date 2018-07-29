@@ -1,6 +1,7 @@
 from django.views import generic
 
 from .models import *
+from posts.models import Article
 
 # Create your views here.
 class HomepageView(generic.ListView):
@@ -10,6 +11,7 @@ class HomepageView(generic.ListView):
         # Call the base implementation first to get a context
         context = super(generic.ListView, self).get_context_data(**kwargs)
         # Add in a QuerySet of all the models 
+        context['article_list'] = Article.objects.order_by('-pub_date')
         context['article_link_list'] = LinkToPostStatic.objects.filter(name_text__startswith="article_")
         context['article_pdf_list'] = PdfFile.objects.filter(name_text__startswith="article_")
         context['reading_pdf_list'] = PdfFile.objects.filter(name_text__startswith="reading_")

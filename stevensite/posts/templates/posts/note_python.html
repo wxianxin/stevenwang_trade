@@ -629,11 +629,37 @@
 629
 630
 631
-632</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #75715e"># Author: Steven Wang	Date:20151221</span>
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #75715e"># Author: Steven Wang	Date:20151221</span>
 <span style="color: #75715e"># python 3</span>
 
 <span style="color: #f8f8f2">{}</span> <span style="color: #75715e">#curly braces</span>
-
 <span style="color: #f8f8f2">no</span> <span style="color: #f8f8f2">datatype</span>
 <span style="color: #f8f8f2">use</span> <span style="color: #f8f8f2">white</span> <span style="color: #f8f8f2">space</span> <span style="color: #f8f8f2">to</span> <span style="color: #f8f8f2">structure(no</span> <span style="color: #e6db74">&quot;;&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">use</span> <span style="color: #f8f8f2">indent)</span>
 <span style="color: #e6db74">&quot;True&quot;</span> <span style="color: #e6db74">&quot;False&quot;</span>
@@ -641,11 +667,11 @@
 <span style="color: #75715e">#comments</span>
 
 <span style="color: #e6db74">&quot;&quot;&quot;</span>
-<span style="color: #e6db74">comments</span>
+<span style="color: #e6db74">docstring</span>
 <span style="color: #e6db74">&quot;&quot;&quot;</span>
 
-
-<span style="color: #f8f8f2">string:</span>
+<span style="color: #75715e">################################################################################</span>
+<span style="color: #75715e"># string</span>
 <span style="color: #f8f8f2">print(text)</span>
 <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;a string&quot;</span><span style="color: #f8f8f2">)</span>
 <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;a&quot;</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot;big&quot;</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot;hat&quot;</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e">#concatenate</span>
@@ -675,7 +701,8 @@
 <span style="color: #e6db74">&quot;---&quot;</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">join[my_list]</span> <span style="color: #75715e">#=&gt; a---b---c</span>
 <span style="color: #75715e"># &#39;&#39; and &quot;&quot; are interchangeable</span>
 
-<span style="color: #f92672">%</span> <span style="color: #f8f8f2">formatting</span>
+<span style="color: #75715e">################################################################################</span>
+<span style="color: #75715e"># formatting</span>
 <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;{} is {} {}&quot;</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">format(</span><span style="color: #e6db74">&quot;He&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;a&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;boy&quot;</span><span style="color: #f8f8f2">))</span>
 <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;The time is {:02d}:{:02d}&quot;</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">format(</span><span style="color: #ae81ff">9</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">7</span><span style="color: #f8f8f2">))</span>
 
@@ -685,13 +712,14 @@
 
 <span style="color: #e6db74">&#39;Alpha&#39;</span> <span style="color: #e6db74">&quot;Bravo&quot;</span> <span style="color: #e6db74">&quot;Thailand&#39;s people&quot;</span> <span style="color: #75715e">#no need for backslash</span>
 
-<span style="color: #f8f8f2">data</span> <span style="color: #f92672">&amp;</span> <span style="color: #f8f8f2">time:</span>
+<span style="color: #75715e">################################################################################</span>
+<span style="color: #75715e"># data &amp; time:</span>
 <span style="color: #f92672">from</span> <span style="color: #f8f8f2">datetime</span> <span style="color: #66d9ef">import</span> <span style="color: #f8f8f2">datetime</span> <span style="color: #75715e">#inport &quot;datetime&quot; module</span>
 <span style="color: #f8f8f2">now</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">datetime</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">now()</span>
 <span style="color: #f8f8f2">now</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">year</span> <span style="color: #f8f8f2">now</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">month</span> <span style="color: #f8f8f2">now</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">day</span> <span style="color: #f8f8f2">now</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">hour</span> <span style="color: #f8f8f2">now</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">minute</span> <span style="color: #f8f8f2">now</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">second</span>
 
-<span style="color: #e6db74">&quot;**&quot;</span> <span style="color: #75715e">#to the power of</span>
-
+<span style="color: #75715e">################################################################################</span>
+<span style="color: #75715e"># logicl operators</span>
 <span style="color: #f8f8f2">boolean</span> <span style="color: #f8f8f2">operator:</span>
 <span style="color: #f92672">not</span><span style="color: #f8f8f2">,</span> <span style="color: #f92672">and</span><span style="color: #f8f8f2">,</span> <span style="color: #f92672">or</span>
 <span style="color: #f92672">-----------&gt;</span> <span style="color: #f8f8f2">priority</span>
@@ -700,8 +728,21 @@
 <span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">__:</span> <span style="color: #75715e">#else if, elif is only checked if the original &quot;if&quot; statement is False</span>
 <span style="color: #66d9ef">else</span> <span style="color: #f8f8f2">__:</span>
 
-<span style="color: #75715e"># LOOP:</span>
+	<span style="color: #e6db74">&quot;**&quot;</span> <span style="color: #75715e">#to the power of</span>
 
+<span style="color: #ae81ff">5</span><span style="color: #f92672">/</span><span style="color: #ae81ff">2</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">2</span>
+<span style="color: #f8f8f2">float(</span><span style="color: #ae81ff">5</span><span style="color: #f8f8f2">)</span><span style="color: #f92672">/</span> <span style="color: #ae81ff">2</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">2.5</span>
+<span style="color: #e6db74">&quot;/&quot;</span> <span style="color: #75715e">#continuation charater, next line is following up</span>
+
+<span style="color: #f8f8f2">max()</span>
+<span style="color: #f8f8f2">min()</span>
+<span style="color: #f8f8f2">abs()</span>
+<span style="color: #f8f8f2">type()</span>
+
+<span style="color: #f8f8f2">sum(variable)</span> <span style="color: #75715e"># summation</span>
+
+<span style="color: #75715e">################################################################################</span>
+<span style="color: #75715e"># LOOP:</span>
 <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">key</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">dict_name:</span>
     <span style="color: #f8f8f2">print(dict_name[key])</span>
 <span style="color: #75715e">#CAUTION: dictionary is unordered</span>
@@ -716,18 +757,8 @@
         <span style="color: #f8f8f2">print(a,</span> <span style="color: #f8f8f2">b)</span>
 
 
-<span style="color: #f8f8f2">sum(variable)</span> <span style="color: #75715e"># summation</span>
-
-<span style="color: #ae81ff">5</span><span style="color: #f92672">/</span><span style="color: #ae81ff">2</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">2</span>
-<span style="color: #f8f8f2">float(</span><span style="color: #ae81ff">5</span><span style="color: #f8f8f2">)</span><span style="color: #f92672">/</span> <span style="color: #ae81ff">2</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">2.5</span>
-<span style="color: #e6db74">&quot;/&quot;</span> <span style="color: #75715e">#continuation charater, next line is following up</span>
-
-<span style="color: #f8f8f2">max()</span>
-<span style="color: #f8f8f2">min()</span>
-<span style="color: #f8f8f2">abs()</span>
-<span style="color: #f8f8f2">type()</span>
-
-<span style="color: #f8f8f2">function:</span>
+<span style="color: #75715e">################################################################################</span>
+<span style="color: #75715e"># function:</span>
 <span style="color: #ae81ff">1.</span><span style="color: #f8f8f2">header:</span> 
 <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">function_name</span><span style="color: #f8f8f2">(arguments):</span>
 <span style="color: #75715e"># One can also pass function as argument.</span>
@@ -760,7 +791,7 @@
     <span style="color: #f8f8f2">call:</span> <span style="color: #f8f8f2">sqrt()</span>
 <span style="color: #ae81ff">3.</span><span style="color: #f8f8f2">universal</span> <span style="color: #f8f8f2">import:</span> <span style="color: #f92672">from</span> <span style="color: #f8f8f2">math</span> <span style="color: #66d9ef">import</span> <span style="color: #f92672">*</span>    <span style="color: #75715e">#CAUTION: fill the program with many variable and function names</span>
 	<span style="color: #f8f8f2">call:</span> <span style="color: #f8f8f2">sqrt()</span>
-<span style="color: #75715e">#best to stick with module name</span>
+<span style="color: #75715e"># best to stick with module name</span>
 
 <span style="color: #f92672">import</span> <span style="color: #f8f8f2">math</span>
 <span style="color: #f8f8f2">everything</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">dir(math)</span>
@@ -789,7 +820,8 @@
 
 <span style="color: #f8f8f2">list_name</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">sort()</span>   <span style="color: #75715e">#modify the list so it is in order</span>
 
-<span style="color: #f8f8f2">dictionary</span> <span style="color: #75715e"># map in c++</span>
+<span style="color: #75715e">################################################################################</span>
+<span style="color: #75715e"># dictionary, like map in c++ ?</span>
 <span style="color: #f8f8f2">d</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">{</span><span style="color: #e6db74">&#39;key1&#39;</span><span style="color: #f8f8f2">:</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&#39;key2&#39;</span><span style="color: #f8f8f2">:</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&#39;key3&#39;</span><span style="color: #f8f8f2">:</span><span style="color: #ae81ff">3</span><span style="color: #f8f8f2">}</span>
 <span style="color: #f8f8f2">dict_name[new_key]</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">new</span> <span style="color: #f8f8f2">value</span>
 <span style="color: #f8f8f2">empty_dict</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">{}</span>
@@ -797,7 +829,6 @@
 <span style="color: #75715e"># return the corresponding value if &#39;Steve&#39; is in the dict; Otherwise return the second parameter value.</span>
 <span style="color: #66d9ef">del</span> <span style="color: #f8f8f2">dict_name[key_name]</span>
 <span style="color: #f8f8f2">list_name</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">remove()</span>
-
 
 
 <span style="color: #f8f8f2">list_name</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">pop(index)</span> <span style="color: #75715e"># return value and remove</span>
@@ -817,8 +848,17 @@
 
 <span style="color: #f8f8f2">[</span><span style="color: #e6db74">&quot;0&quot;</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">*</span> <span style="color: #ae81ff">5</span> <span style="color: #75715e">#=&gt; [&#39;0&#39;,&#39;0&#39;,&#39;0&#39;,&#39;0&#39;,&#39;0&#39;]</span>
 
+<span style="color: #75715e">################################################################################</span>
 <span style="color: #f8f8f2">form</span> <span style="color: #f8f8f2">random</span> <span style="color: #f92672">import</span> <span style="color: #f8f8f2">randint</span>
 <span style="color: #f8f8f2">int(raw_imput(</span><span style="color: #e6db74">&quot;hint&quot;</span><span style="color: #f8f8f2">))</span> <span style="color: #75715e">#raw_input always returns string type</span>
+
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">random</span>
+<span style="color: #f8f8f2">rand_num</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">random</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">randrange(</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">51</span><span style="color: #f8f8f2">)</span>
+
+<span style="color: #f8f8f2">my_list</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">[</span><span style="color: #e6db74">&quot;Peter&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;Paul&quot;</span><span style="color: #f8f8f2">,</span><span style="color: #e6db74">&quot;Amy&quot;</span><span style="color: #f8f8f2">]</span>
+<span style="color: #f8f8f2">random</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">choice(my_list)</span>
+
+<span style="color: #75715e">################################################################################</span>
 
 <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">x</span> <span style="color: #f92672">not</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">range(</span><span style="color: #ae81ff">8</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">or</span> <span style="color: #f8f8f2">y</span> <span style="color: #f92672">not</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">range(</span><span style="color: #ae81ff">5</span><span style="color: #f8f8f2">)</span>
 <span style="color: #66d9ef">break</span> <span style="color: #75715e"># to get out of the loop</span>
@@ -850,9 +890,9 @@
 <span style="color: #f8f8f2">float(len(my_list))</span>
 
 <span style="color: #75715e">#dictionary is unordered key/value pairs</span>
-<span style="color: #f8f8f2">print(my_dict</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">item())</span> <span style="color: #75715e">#=&gt; print all keys and its values in random order</span>
+<span style="color: #f8f8f2">print(my_dict</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">items())</span> <span style="color: #75715e">#=&gt; print all keys and its values in random order</span>
 <span style="color: #f8f8f2">my_dict</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">keys()</span> <span style="color: #75715e"># returns an array of dictionary&#39;s keys</span>
-<span style="color: #f8f8f2">my_dict</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">item()</span> <span style="color: #75715e"># returns an array of dictionary&#39;s values</span>
+<span style="color: #f8f8f2">my_dict</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">items()</span> <span style="color: #75715e"># returns an array of dictionary&#39;s values</span>
 
 <span style="color: #75715e"># tuple: a sequence of immutable objectl; a Tuple is like a list, but their values can&#39;t be changed</span>
 <span style="color: #75715e"># tuples are surrounded by &quot;()&quot;</span>
@@ -880,10 +920,12 @@
 <span style="color: #f8f8f2">my_list[::</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">]</span> <span style="color: #75715e">#=&gt;[1,3,5]</span>
 <span style="color: #f8f8f2">my_list[::</span><span style="color: #f92672">-</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">]</span> <span style="color: #75715e">#=&gt;[5,4,3,2,1] {reversing a list)</span>
 
+<span style="color: #75715e">################################################################################</span>
 <span style="color: #75715e">#functional programming(anonymous function):</span>
 <span style="color: #75715e"># lambda arg1, arg2,...:expression use the args</span>
 <span style="color: #f8f8f2">sum</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">lambda</span> <span style="color: #f8f8f2">x,</span> <span style="color: #f8f8f2">y</span> <span style="color: #f8f8f2">:</span> <span style="color: #f8f8f2">x</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">y</span>
 
+<span style="color: #75715e">################################################################################</span>
 <span style="color: #75715e">#bitwise operator:</span>
 <span style="color: #75715e">#In python: to write numbers in bianry format by starting the number with [0b].</span>
 	<span style="color: #ae81ff">0b100</span>
@@ -942,14 +984,14 @@
 <span style="color: #f92672">^</span> <span style="color: #75715e"># using[^] to flip bits</span>
 <span style="color: #f92672">&lt;&lt;</span> <span style="color: #f92672">&gt;&gt;</span> <span style="color: #75715e"># using [&lt;&lt;] and [&gt;&gt;] to slide mask into place</span>
 
-
+<span style="color: #75715e">################################################################################</span>
 <span style="color: #75715e"># class:</span>
 <span style="color: #75715e"># when a class has its own functions, those functions are called methods</span>
 <span style="color: #75715e"># [&quot;Eric&quot;] and [my_dict] are instances of the [str] and [dict] class.</span>
 <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">NewClass</span><span style="color: #f8f8f2">(object):</span>	<span style="color: #75715e"># in the parenthesis is the class from which the new class inherits</span>
 						<span style="color: #75715e"># [object] is the simplest, most basic class</span>
 						<span style="color: #75715e"># by convention, user-defined Python class names start with a capital letter</span>
-    <span style="color: #e6db74">&#39;&#39;&#39;This is my new class&#39;&#39;&#39;</span>      <span style="color: #75715e"># docstring</span>
+    <span style="color: #e6db74">&quot;&quot;&quot;This is my new class&quot;&quot;&quot;</span>      <span style="color: #75715e"># docstring</span>
 	<span style="color: #66d9ef">def</span> <span style="color: #a6e22e">__init__</span><span style="color: #f8f8f2">(self,</span> <span style="color: #f8f8f2">age,</span> <span style="color: #f8f8f2">name):</span>	<span style="color: #75715e"># [__intit__()] exist by default</span>
 		<span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">age</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">age</span>				<span style="color: #75715e"># Python will use the 1st parameter that [__init__()] receives to refer to the object being created.</span>
 		<span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">name</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">name</span>			<span style="color: #75715e"># Python convention: it&#39;s overwhelming common to use [self] as the 1st parameter in [__init__()]</span>
@@ -1015,6 +1057,7 @@
 <span style="color: #75715e">#Container’s __str__ uses contained objects’ __repr__</span>
 
 
+<span style="color: #75715e">################################################################################</span>
 <span style="color: #75715e"># Magic methods</span>
 <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Time</span><span style="color: #f8f8f2">(hour,</span> <span style="color: #f8f8f2">minute,</span> <span style="color: #f8f8f2">second):</span>
     
@@ -1045,7 +1088,7 @@
 
 <span style="color: #f8f8f2">main()</span>
 
-
+<span style="color: #75715e">################################################################################</span>
 <span style="color: #75715e"># File I/O:</span>
 <span style="color: #f8f8f2">my_file</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">open(</span><span style="color: #e6db74">&quot;output.txt&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;w&quot;</span><span style="color: #f8f8f2">)</span>	<span style="color: #75715e"># open &quot;output.txt&quot; in &quot;w&quot; mode(&quot;w&quot; stands for &quot;write&quot;), store the result of this operation in a file object [my_file]</span>
 <span style="color: #75715e"># &quot;w&quot;: write only mode</span>
@@ -1077,6 +1120,7 @@
 <span style="color: #75715e">#check if the file is closed:</span>
 <span style="color: #f8f8f2">print(my_file</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">closed)</span> <span style="color: #75715e">#Python file objects have a [closed] attribute, [True] for closed, [False] for not closed</span>
 
+<span style="color: #75715e">################################################################################</span>
 <span style="color: #75715e"># try</span>
 <span style="color: #66d9ef">try</span><span style="color: #f8f8f2">:</span>
 
@@ -1089,7 +1133,7 @@
 <span style="color: #66d9ef">else</span><span style="color: #f8f8f2">:</span>
 <span style="color: #75715e"># if no except encountered</span>
 <span style="color: #66d9ef">finally</span><span style="color: #f8f8f2">:</span>
-<span style="color: #75715e"># always be executed</span>
+<span style="color: #75715e"># always be executed; executed before the code is stopped</span>
 
 
 <span style="color: #75715e"># Make custom exceptions</span>
@@ -1099,13 +1143,13 @@
         <span style="color: #a6e22e">Exception</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">__init__(self,</span> <span style="color: #f92672">*</span><span style="color: #f8f8f2">args,</span> <span style="color: #f92672">**</span><span style="color: #f8f8f2">kwargs)</span>
         
 
+<span style="color: #75715e">################################################################################</span>
 
 <span style="color: #75715e"># Global variable</span>
 <span style="color: #f8f8f2">var_1</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">1</span>
 <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">fcn</span><span style="color: #f8f8f2">():</span>
     <span style="color: #66d9ef">global</span> <span style="color: #f8f8f2">var_1</span> <span style="color: #f92672">=</span><span style="color: #ae81ff">2</span>
 
-<span style="color: #75715e"># End of file</span>
 
 <span style="color: #75715e"># os module</span>
 <span style="color: #f92672">import</span> <span style="color: #f8f8f2">os</span>
@@ -1129,11 +1173,7 @@
 <span style="color: #f8f8f2">eval(</span><span style="color: #e6db74">&quot;x + 1&quot;</span><span style="color: #f8f8f2">)</span>
 <span style="color: #75715e"># eval() interprets a string as code</span>
 
-<span style="color: #f92672">import</span> <span style="color: #f8f8f2">random</span>
-<span style="color: #f8f8f2">rand_num</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">random</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">randrange(</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #ae81ff">51</span><span style="color: #f8f8f2">)</span>
 
-<span style="color: #f8f8f2">my_list</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">[</span><span style="color: #e6db74">&quot;Peter&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;Paul&quot;</span><span style="color: #f8f8f2">,</span><span style="color: #e6db74">&quot;Amy&quot;</span><span style="color: #f8f8f2">]</span>
-<span style="color: #f8f8f2">random</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">choice(my_list)</span>
 
 <span style="color: #75715e"># Built-in function map</span>
 <span style="color: #f8f8f2">map(function,</span> <span style="color: #f8f8f2">iterable,</span> <span style="color: #f92672">...</span><span style="color: #f8f8f2">)</span>
@@ -1170,6 +1210,7 @@
 <span style="color: #f8f8f2">print([col[</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">]</span> <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">col</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">multiList])</span>
 <span style="color: #f8f8f2">print([multiList[i][i]</span> <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">range(len(multiList))])</span>
 
+<span style="color: #75715e">################################################################################</span>
 <span style="color: #75715e"># Iterables</span>
 <span style="color: #75715e"># Iterable is a list of values</span>
 <span style="color: #75715e"># eg.1</span>
@@ -1196,7 +1237,7 @@
 <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">range(</span><span style="color: #ae81ff">10</span><span style="color: #f8f8f2">):</span>
     <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;Fib :&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">next(fibSeq))</span>
 
-
+<span style="color: #75715e">################################################################################</span>
 <span style="color: #75715e"># Generator functions (yield)</span>
 <span style="color: #75715e"># A generator function returns a result generator when called. They can be suspended and resumed during execution of your program to create results over time rather than all at once</span>
 <span style="color: #75715e"># We use generators when we want to big result set, but we don&#39;t want to slow down the program by creating it all at one time</span>
@@ -1229,6 +1270,7 @@
 <span style="color: #75715e"># Create a reference to the generator</span>
 <span style="color: #f8f8f2">prime</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">gen_primes(</span><span style="color: #ae81ff">50</span><span style="color: #f8f8f2">)</span>
 
+<span style="color: #75715e">################################################################################</span>
 <span style="color: #75715e"># python scope</span>
 <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">scope_test</span><span style="color: #f8f8f2">():</span>
     <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">do_local</span><span style="color: #f8f8f2">():</span>
@@ -1259,6 +1301,18 @@
 <span style="color: #75715e"># After global assignment: nonlocal spam</span>
 <span style="color: #75715e"># In global scope: global spam</span>
 
+
+<span style="color: #75715e"># to avoid unintentional execution of the code in a module when importing this module</span>
+<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">__name__</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&#39;__main__&#39;</span><span style="color: #f8f8f2">:</span>
+	<span style="color: #f8f8f2">main()</span>
+
+<span style="color: #75715e"># sys.argv is a list in Python, which contains the command-line arguments passed to the script.</span>
+<span style="color: #f92672">from</span> <span style="color: #f8f8f2">sys</span> <span style="color: #66d9ef">import</span> <span style="color: #f8f8f2">argv</span>
+<span style="color: #f8f8f2">print(sys</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">argv)</span>
+
+<span style="color: #f8f8f2">variable</span> <span style="color: #f8f8f2">type</span> <span style="color: #f8f8f2">annotation</span>
+
+<span style="color: #f92672">-&gt;</span>
 
 <span style="color: #f8f8f2">EOF</span>
 </pre></td></tr></table></div>

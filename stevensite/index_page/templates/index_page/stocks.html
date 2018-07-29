@@ -33,7 +33,7 @@ body {
                 <center><img src="{% static 'index_page/stocks/images/' %}{{ stock.name_text }}.png" alt=logo.png style="max-width:220px; max-height:100px;"></center>
                 <p><center>{{ stock.name_text }}</center></p>
             </div>
-            <a href={{ stock.link_text }}><h2 class="col-xs-9">{{ stock.title_text }}</h2></a>
+            <a href={% url 'posts:static_html' stock.name_text%}><h2 class="col-xs-9">{{ stock.title_text }}</h2></a>
         </li>
         {% endfor %}
     {% else %}
