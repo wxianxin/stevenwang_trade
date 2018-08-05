@@ -1,1 +1,1 @@
-. ~/.virtualenvs/django/bin/activate
+. ~/.venvs/django/bin/activate
